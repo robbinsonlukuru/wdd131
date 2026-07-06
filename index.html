@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 131 – Dynamic Web Fundamentals – Robbinson Lukuru</title>
+    <meta name="description" content="WDD 131 – Dynamic Web Fundamentals. Robbinson Lukuru's course landing page featuring an about-me profile and a curated list of web development learning resources.">
+    <meta name="author" content="Robbinson Lukuru">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/week 01/styles/base.css">
+    <script src="scripts/getdates.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <span id="course-title">WDD 131 – Dynamic Web Fundamentals</span>
+        <nav>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://byupw.instructure.com/" target="_blank" rel="noopener">I-Learn</a>
+            <a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/3?lang=eng&id=p7#p7" target="_blank" rel="noopener">Scripture</a>
+            <a href="#" target="_blank" rel="noopener">Final Project</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Robbinson Lukuru</h1>
+
+        <section class="card">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>
+                    My name is Robbinson, and I'm a software development student with BYU-Pathway Worldwide,
+                    based in Nairobi, Kenya. I'm currently working through introductory programming and web
+                    fundamentals courses while building small projects for local businesses and community
+                    initiatives. I enjoy creative design, civic technology, and listening to blues music in
+                    my free time.
+                </p>
+                <img src="images/profile.svg" alt="Placeholder profile portrait of Robbinson Lukuru" class="profile-photo">
+            </div>
+            <hr>
+            <h3>Nairobi, Kenya</h3>
+            <div class="country-content">
+                <figure>
+                    <img src="images/kenya-flag.svg" alt="Flag of Kenya" class="flag-photo">
+                    <figcaption>Official Flag of Kenya</figcaption>
+                </figure>
+                <p>
+                    Kenya sits along the equator in East Africa, bordered by the Indian Ocean to the
+                    southeast. Nairobi, the capital, is known as a growing hub for technology and
+                    innovation in the region, often nicknamed the "Silicon Savannah." The country is
+                    also famous for its wildlife, the Great Rift Valley, and its long-distance running
+                    tradition.
+                </p>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Web Dev Resources</h2>
+            <ul class="resource-list">
+                <li><a href="https://dev.to/" target="_blank" rel="noopener">Dev.to Community</a></li>
+                <li><a href="https://www.smashingmagazine.com/" target="_blank" rel="noopener">Smashing Magazine</a></li>
+                <li><a href="https://css-tricks.com/" target="_blank" rel="noopener">CSS Tricks</a></li>
+                <li><a href="https://www.w3schools.com/" target="_blank" rel="noopener">W3 Schools</a></li>
+                <li><a href="https://www.udemy.com/" target="_blank" rel="noopener">Udemy</a></li>
+                <li><a href="https://picsum.photos/" target="_blank" rel="noopener">Lorem Picsum Image Placeholder</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy;<span id="currentyear"></span> Robbinson Lukuru &#127791; Kenya</p>
+        <p id="lastModified"></p>
+    </footer>
+
+</body>
+</html>
