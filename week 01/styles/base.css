@@ -2,13 +2,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color:rgba(243, 238, 238, 0.596)
 }
-
+@media(max-width: 680px) { h1
+    
+}
 :root {
     --primary-color: #1d4e6e;
     --dark-bg: #2b2b2b;
     --card-border: #cfd8de;
-    --text-color: #2b2b2b;
+    --text-color: #000000;
     --link-color: #1d4e6e;
     --accent-green: #1a5c1a;
 }
@@ -132,14 +135,12 @@ main h1 {
     margin: 20px 0;
 }
 
-/* About Me section */
 .about-content {
     display: flex;
     gap: 20px;
     align-items: flex-start;
     padding-top: 18px;
 }
-
 .about-content p {
     flex: 1;
 }
