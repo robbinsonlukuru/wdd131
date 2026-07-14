@@ -1,0 +1,93 @@
+/* temples.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    background: #0d3b66;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    background: #1d3557;
+}
+
+#menu {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+nav {
+    display: none;
+    flex-direction: column;
+}
+
+nav.open {
+    display: flex;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav a:hover {
+    background: #457b9d;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem;
+
+    display: grid;
+    grid-template-columns: 1fr; /* ONE COLUMN ON MOBILE */
+    gap: 1rem;
+}
+
+h1 {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+figure {
+    background: white;
+    border: 1px solid #ddd;
+    padding: .5rem;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+figcaption {
+    text-align: center;
+    padding: .5rem;
+}
+
+footer {
+    background: #0d3b66;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
