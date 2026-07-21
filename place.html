@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Madagascar | Place Page</title>
+  <meta name="description" content="A profile page for Madagascar featuring key data and current weather conditions.">
+
+  <link rel="stylesheet" href="styles/place.css">
+
+  <script src="scripts/place.js" defer></script>
+</head>
+<body>
+
+  <header>
+    <h1>Madagascar</h1>
+  </header>
+
+  <div class="accent-bar"></div>
+
+  <div class="hero-wrapper">
+
+    <img
+  class="hero-image"
+  src="images/pexels-luke.jpg"
+  srcset="images/pexels-luke.jpg 500w,
+          images/pexels-luke.jpg 1200w"
+  sizes="100vw"
+  alt="Ring-tailed lemurs in Madagascar"
+  width="1200"
+  height="600"
+>
+
+    <main>
+
+      <section class="data-section">
+        <h2>Data</h2>
+        <div class="info-grid">
+          <span class="label">Area:</span>
+          <span class="value">587,041 sq km</span>
+
+          <span class="label">Population:</span>
+          <span class="value">27,691,018</span>
+
+          <span class="label">Capital:</span>
+          <span class="value">Antananarivo</span>
+
+          <span class="label">Languages:</span>
+          <span class="value">Malagasy, French</span>
+
+          <span class="label">Currency:</span>
+          <span class="value">Malagasy Ariary</span>
+
+          <span class="label">Time Zone:</span>
+          <span class="value">UTC+3</span>
+
+          <span class="label">Calling Code:</span>
+          <span class="value">+261</span>
+
+          <span class="label">Internet TLD:</span>
+          <span class="value">.mg</span>
+        </div>
+      </section>
+
+      <section class="weather-section">
+        <h2 class="weather-heading">
+          Weather
+          
+          <img class="weather-icon-svg" src="images/weather-icon.svg" alt="" aria-hidden="true">
+        </h2>
+       
+
+        <div class="info-grid">
+          <span class="label">Temperature:</span>
+          <span class="value" id="temperature"></span>
+
+          <span class="label">Conditions:</span>
+          <span class="value" id="conditions">Partly Cloudy</span>
+
+          <span class="label">Wind:</span>
+          <span class="value" id="wind"></span>
+
+          <span class="label">Wind Chill:</span>
+          <span class="value" id="wind-chill"></span>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Rubia Magdelena Francesco &mdash; Madagascar</p>
+    <p>Last Modification: <span id="last-modified"></span></p>
+  </footer>
+
+</body>
+</html>
