@@ -1,4 +1,6 @@
-/* * {
+/* temples.css */
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -55,15 +57,14 @@ main {
     gap: 1rem;
 }
 
-main h1 {
-    grid-column: 1 / -1;
+h1 {
     text-align: center;
 }
 
 figure {
     background: white;
     border: 1px solid #ddd;
-    padding: .5rem;
+    padding: 0.5rem;
 }
 
 img {
@@ -73,7 +74,7 @@ img {
 
 figcaption {
     text-align: center;
-    padding: .5rem;
+    padding: 0.5rem;
 }
 
 footer {
@@ -81,4 +82,4 @@ footer {
     color: white;
     text-align: center;
     padding: 1rem;
-} */
+}
