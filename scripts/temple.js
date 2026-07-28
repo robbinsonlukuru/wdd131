@@ -1,4 +1,3 @@
-
 const temples = [
   {
     templeName: "Aba Nigeria",
@@ -62,7 +61,7 @@ const temples = [
     dedicated: "2016, March, 20",
     area: 72000,
     imageUrl:
-    "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/provo-city-center-utah/400x250/provo-city-center-temple-963889-wallpaper.jpg"
+    "https://www.churchofjesuschrist.org/imgs/4615cf70d99a702222b697c6e0449f4d4c6de1bf/full/800,/0/default"
   },
   {
     templeName: "Rome Italy",
@@ -70,7 +69,7 @@ const temples = [
     dedicated: "2019, March, 10",
     area: 40000,
     imageUrl:
-    "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/rome-italy/400x250/rome-italy-temple-1520121-wallpaper.jpg"
+    "https://churchofjesuschristtemples.org/assets/img/temples/rome-italy-temple/rome-italy-temple-2642-main.jpg"
   },
   {
     templeName: "Tokyo Japan",
@@ -78,21 +77,18 @@ const temples = [
     dedicated: "1980, October, 27",
     area: 53997,
     imageUrl:
-    "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/tokyo-japan/400x250/tokyo-japan-temple-exterior-1520281-wallpaper.jpg"
+    "https://churchofjesuschristtemples.org/assets/img/temples/tokyo-japan-temple/tokyo-japan-temple-26340-main.jpg"
   }
 ];
 
-
 const main = document.querySelector("main");
-
 
 function getYear(dedicated) {
   return parseInt(dedicated.split(",")[0], 10);
 }
 
-
 function displayTemples(templeList) {
-  main.innerHTML = ""; 
+  main.innerHTML = "";
 
   templeList.forEach((temple) => {
     const card = document.createElement("figure");
@@ -116,9 +112,7 @@ function displayTemples(templeList) {
   });
 }
 
-
 displayTemples(temples);
-
 
 const navLinks = document.querySelectorAll("nav a");
 
@@ -150,7 +144,6 @@ navLinks.forEach((link) => {
     displayTemples(filtered);
   });
 });
-
 
 document.getElementById("currentyear").textContent = new Date().getFullYear();
 document.getElementById("lastModified").textContent =
