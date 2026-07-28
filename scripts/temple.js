@@ -1,3 +1,4 @@
+
 const temples = [
   {
     templeName: "Aba Nigeria",
@@ -55,4 +56,109 @@ const temples = [
     imageUrl:
     "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
   },
-  // Add more temple objects here...
+  {
+    templeName: "Provo City Center",
+    location: "Provo, Utah, United States",
+    dedicated: "2016, March, 20",
+    area: 72000,
+    imageUrl:
+    "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/provo-city-center-utah/400x250/provo-city-center-temple-963889-wallpaper.jpg"
+  },
+  {
+    templeName: "Rome Italy",
+    location: "Rome, Italy",
+    dedicated: "2019, March, 10",
+    area: 40000,
+    imageUrl:
+    "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/rome-italy/400x250/rome-italy-temple-1520121-wallpaper.jpg"
+  },
+  {
+    templeName: "Tokyo Japan",
+    location: "Tokyo, Japan",
+    dedicated: "1980, October, 27",
+    area: 53997,
+    imageUrl:
+    "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/tokyo-japan/400x250/tokyo-japan-temple-exterior-1520281-wallpaper.jpg"
+  }
+];
+
+
+const main = document.querySelector("main");
+
+
+function getYear(dedicated) {
+  return parseInt(dedicated.split(",")[0], 10);
+}
+
+
+function displayTemples(templeList) {
+  main.innerHTML = ""; 
+
+  templeList.forEach((temple) => {
+    const card = document.createElement("figure");
+
+    const img = document.createElement("img");
+    img.src = temple.imageUrl;
+    img.alt = temple.templeName;
+    img.loading = "lazy";
+
+    const caption = document.createElement("figcaption");
+    caption.innerHTML = `
+      <h2>${temple.templeName}</h2>
+      <p><strong>Location:</strong> ${temple.location}</p>
+      <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
+      <p><strong>Size:</strong> ${temple.area.toLocaleString()} sq ft</p>
+    `;
+
+    card.appendChild(img);
+    card.appendChild(caption);
+    main.appendChild(card);
+  });
+}
+
+
+displayTemples(temples);
+
+
+const navLinks = document.querySelectorAll("nav a");
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    const category = link.textContent.trim();
+
+    let filtered;
+
+    switch (category) {
+      case "Old":
+        filtered = temples.filter((t) => getYear(t.dedicated) < 1900);
+        break;
+      case "New":
+        filtered = temples.filter((t) => getYear(t.dedicated) > 2000);
+        break;
+      case "Large":
+        filtered = temples.filter((t) => t.area > 90000);
+        break;
+      case "Small":
+        filtered = temples.filter((t) => t.area < 10000);
+        break;
+      case "Home":
+      default:
+        filtered = temples;
+    }
+
+    displayTemples(filtered);
+  });
+});
+
+
+document.getElementById("currentyear").textContent = new Date().getFullYear();
+document.getElementById("lastModified").textContent =
+  "Last Modified: " + document.lastModified;
+
+const menuButton = document.getElementById("menu");
+const nav = document.querySelector("nav");
+
+menuButton.addEventListener("click", () => {
+  nav.classList.toggle("open");
+});
