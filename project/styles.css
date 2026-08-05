@@ -108,6 +108,52 @@ strong {
   font-weight: 600;
 }
 
+.dot-primary {
+  background: #c0392b;
+}
+
+.dot-accent {
+  background: #f1c40f;
+}
+
+.dot-dark {
+  background: #2c3e50;
+}
+
+.dot-background {
+  background: #faf8f5;
+}
+
+.dot-white {
+  background: #fff;
+  border-color: #aaa;
+}
+
+.font-sample {
+  display: inline-block;
+  margin-top: 0.4rem;
+}
+
+.font-sample-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: #c0392b;
+}
+
+.font-sample-body {
+  font-family: 'Open Sans', Arial, sans-serif;
+}
+
+.typography-item {
+  margin-top: 0.8rem;
+}
+
+.viewport-label {
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: #777;
+}
+
 .wireframe-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;

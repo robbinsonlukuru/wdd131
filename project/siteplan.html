@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Site plan for Local Foodie Blog, a community food blog covering local restaurants, seasonal recipes, and food events.">
+  <meta name="author" content="Robbinson">
   <title>Site Plan — Local Foodie Blog</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -56,23 +58,23 @@
 
       <div class="color-demo">
         <div class="color-swatch">
-          <span class="dot" style="background:#c0392b;"></span>
+          <span class="dot dot-primary"></span>
           <span><span class="hex">#C0392B</span> — Primary (headings, links, borders)</span>
         </div>
         <div class="color-swatch">
-          <span class="dot" style="background:#f1c40f;"></span>
+          <span class="dot dot-accent"></span>
           <span><span class="hex">#F1C40F</span> — Accent (buttons, highlights)</span>
         </div>
         <div class="color-swatch">
-          <span class="dot" style="background:#2c3e50;"></span>
+          <span class="dot dot-dark"></span>
           <span><span class="hex">#2C3E50</span> — Dark (secondary headings, text)</span>
         </div>
         <div class="color-swatch">
-          <span class="dot" style="background:#faf8f5;"></span>
+          <span class="dot dot-background"></span>
           <span><span class="hex">#FAF8F5</span> — Background</span>
         </div>
         <div class="color-swatch">
-          <span class="dot" style="background:#fff; border-color:#aaa;"></span>
+          <span class="dot dot-white"></span>
           <span><span class="hex">#FFFFFF</span> — Cards, form fields</span>
         </div>
       </div>
@@ -87,19 +89,19 @@
       <ul>
         <li>
           <strong>Headings — Playfair Display:</strong> a serif font with elegant strokes, used for h1–h4.
-          <br />
-          <span style="font-family:'Playfair Display',serif; font-size:1.4rem; color:#c0392b;">
+          <br>
+          <span class="font-sample font-sample-heading">
             "The best meals are made with love."
           </span>
         </li>
-        <li style="margin-top:0.8rem;">
+        <li class="typography-item">
           <strong>Body — Open Sans:</strong> a clean sans-serif for comfortable reading in reviews and recipes.
-          <br />
-          <span style="font-family:'Open Sans',Arial,sans-serif;">
+          <br>
+          <span class="font-sample font-sample-body">
             "Fresh ingredients, bold flavors, and a sense of community."
           </span>
         </li>
-        <li style="margin-top:0.8rem;">
+        <li class="typography-item">
           <strong>Fallback stack:</strong>
           <code>'Playfair Display', Georgia, serif</code> for headings,
           <code>'Open Sans', Arial, sans-serif</code> for body text.
@@ -114,7 +116,7 @@
       <div class="wireframe-grid">
 
         <div class="wireframe-card">
-          <h4>Mobile <span style="font-weight:400; font-size:0.75rem; color:#777;">(portrait)</span></h4>
+          <h4>Mobile <span class="viewport-label">(portrait)</span></h4>
           <pre>
 +------------------------------+
 |  Local Foodie Blog           |
@@ -146,7 +148,7 @@
         </div>
 
         <div class="wireframe-card">
-          <h4>Desktop <span style="font-weight:400; font-size:0.75rem; color:#777;">(wide screens)</span></h4>
+          <h4>Desktop <span class="viewport-label">(wide screens)</span></h4>
           <pre>
 +--------------------------------------------------------+
 |  Local Foodie Blog    Home  Reviews  Recipes  Events    |
