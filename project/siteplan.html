@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Site Plan — Local Foodie Blog</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Open Sans', Arial, sans-serif;
+      background-color: #faf8f5;
+      color: #2d2a24;
+      line-height: 1.7;
+      padding: 2rem 1.5rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 2.5rem 3rem;
+      border-radius: 14px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.07);
+      border-top: 6px solid #c0392b;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700;
+      color: #2c3e50;
+      line-height: 1.3;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      color: #c0392b;
+      border-bottom: 4px solid #f1c40f;
+      padding-bottom: 0.6rem;
+      margin-bottom: 0.25rem;
+    }
+
+    h1 small {
+      font-family: 'Open Sans', Arial, sans-serif;
+      font-weight: 400;
+      font-size: 1rem;
+      color: #7f8c8d;
+      display: block;
+      margin-top: 0.3rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin: 2.2rem 0 0.75rem;
+      padding-left: 1rem;
+      border-left: 6px solid #f1c40f;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      margin: 1.3rem 0 0.3rem;
+    }
+
+    p, li {
+      font-family: 'Open Sans', Arial, sans-serif;
+    }
+
+    p { margin-bottom: 0.8rem; }
+    ul, ol { margin: 0.4rem 0 1rem 1.8rem; }
+    li { margin-bottom: 0.3rem; }
+
+    strong {
+      color: #c0392b;
+      font-weight: 600;
+    }
+
+    .color-demo {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin: 0.6rem 0 0.2rem;
+    }
+
+    .color-swatch {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: #f4f1eb;
+      padding: 0.4rem 1rem 0.4rem 0.6rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+    }
+
+    .color-swatch .dot {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 2px solid #ddd;
+      flex-shrink: 0;
+    }
+
+    .color-swatch .hex { font-weight: 600; }
+
+    .wireframe-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 1rem 0 0.5rem;
+    }
+
+    .wireframe-card {
+      background-color: #f4f1eb;
+      padding: 1.2rem 1.4rem;
+      border-radius: 10px;
+      border: 2px dashed #b0a8a0;
+      transition: border-color 0.2s;
+    }
+
+    .wireframe-card:hover { border-color: #c0392b; }
+
+    .wireframe-card h4 {
+      text-align: center;
+      font-family: 'Open Sans', Arial, sans-serif;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      font-size: 1.1rem;
+    }
+
+    .wireframe-card pre {
+      background-color: #fff;
+      padding: 0.9rem;
+      border-radius: 6px;
+      font-size: 0.7rem;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      border: 1px solid #ddd;
+      font-family: 'Courier New', monospace;
+    }
+
+    .wireframe-card p {
+      font-size: 0.85rem;
+      color: #555;
+      margin-top: 0.6rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: #f1c40f;
+      color: #2c3e50;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 0.15rem 0.7rem;
+      border-radius: 20px;
+      margin-left: 0.5rem;
+    }
+
+    .available-tag {
+      display: inline-block;
+      background: #27ae60;
+      color: #fff;
+      font-size: 0.7rem;
+      padding: 0.1rem 0.7rem;
+      border-radius: 20px;
+      margin-left: 0.5rem;
+    }
+
+    .footer-note {
+      margin-top: 2.8rem;
+      padding-top: 1.4rem;
+      border-top: 3px solid #f1c40f;
+      font-size: 0.9rem;
+      color: #7f8c8d;
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      body { padding: 1rem 0.8rem; }
+      .container { padding: 1.5rem 1.2rem; }
+      h1 { font-size: 1.8rem; }
+      h2 { font-size: 1.4rem; padding-left: 0.6rem; }
+      .wireframe-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+      .color-demo { gap: 0.8rem; }
+      .color-swatch { font-size: 0.75rem; padding: 0.3rem 0.8rem 0.3rem 0.4rem; }
+      .color-swatch .dot { width: 24px; height: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <header>
+      <h1>
+        Local Foodie Blog
+        <small>Site Plan — WDD 131 Dynamic Web Fundamentals</small>
+      </h1>
+      <p><em>A plan for a community food blog covering local restaurants, seasonal recipes, and food events.</em></p>
+    </header>
+
+    <section id="site-name">
+      <h2>Site Name</h2>
+      <p>
+        <strong>Local Foodie Blog</strong>
+        <span class="badge">Brand</span>
+      </p>
+      <p>
+        The name reflects a blog built around local food culture — from hidden-gem restaurants to farmer's markets and home cooking. It's memorable and tells visitors exactly what the site is about: "Local" builds community connection, "Foodie" speaks to enthusiasts, and "Blog" sets the right expectation for the content.
+      </p>
+      <p>
+        <strong>Domain:</strong> <code>localfoodieblog.com</code>
+        <span class="available-tag">Available</span>
+      </p>
+    </section>
+
+    <section id="site-purpose">
+      <h2>Site Purpose</h2>
+      <p>The Local Foodie Blog gives the community a single place to discover local restaurants, seasonal recipes, and food events, and to swap recommendations through a member forum.</p>
+    </section>
+
+    <section id="scenarios">
+      <h2>Scenarios</h2>
+      <ul>
+        <li>Which local restaurant has the best atmosphere for a date night?</li>
+        <li>What can I cook with fresh zucchini from the farmer's market this week?</li>
+      </ul>
+    </section>
+
+    <section id="color-schema">
+      <h2>Color Schema</h2>
+      <p>A warm palette meant to feel fresh, inviting, and community-driven.</p>
+
+      <div class="color-demo">
+        <div class="color-swatch">
+          <span class="dot" style="background:#c0392b;"></span>
+          <span><span class="hex">#C0392B</span> — Primary (headings, links, borders)</span>
+        </div>
+        <div class="color-swatch">
+          <span class="dot" style="background:#f1c40f;"></span>
+          <span><span class="hex">#F1C40F</span> — Accent (buttons, highlights)</span>
+        </div>
+        <div class="color-swatch">
+          <span class="dot" style="background:#2c3e50;"></span>
+          <span><span class="hex">#2C3E50</span> — Dark (secondary headings, text)</span>
+        </div>
+        <div class="color-swatch">
+          <span class="dot" style="background:#faf8f5;"></span>
+          <span><span class="hex">#FAF8F5</span> — Background</span>
+        </div>
+        <div class="color-swatch">
+          <span class="dot" style="background:#fff; border-color:#aaa;"></span>
+          <span><span class="hex">#FFFFFF</span> — Cards, form fields</span>
+        </div>
+      </div>
+
+      <p>
+        The red draws attention to key elements, the yellow adds warmth to calls-to-action, navy keeps text readable, and the cream background lets food photography stand out.
+      </p>
+    </section>
+
+    <section id="typography">
+      <h2>Typography</h2>
+      <ul>
+        <li>
+          <strong>Headings — Playfair Display:</strong> a serif font with elegant strokes, used for h1–h4.
+          <br />
+          <span style="font-family:'Playfair Display',serif; font-size:1.4rem; color:#c0392b;">
+            "The best meals are made with love."
+          </span>
+        </li>
+        <li style="margin-top:0.8rem;">
+          <strong>Body — Open Sans:</strong> a clean sans-serif for comfortable reading in reviews and recipes.
+          <br />
+          <span style="font-family:'Open Sans',Arial,sans-serif;">
+            "Fresh ingredients, bold flavors, and a sense of community."
+          </span>
+        </li>
+        <li style="margin-top:0.8rem;">
+          <strong>Fallback stack:</strong>
+          <code>'Playfair Display', Georgia, serif</code> for headings,
+          <code>'Open Sans', Arial, sans-serif</code> for body text.
+        </li>
+      </ul>
+    </section>
+
+    <section id="wireframe">
+      <h2>Wireframe Sketches</h2>
+      <p><em>Layout concepts for the home page in mobile and desktop views.</em></p>
+
+      <div class="wireframe-grid">
+
+        <div class="wireframe-card">
+          <h4>Mobile <span style="font-weight:400; font-size:0.75rem; color:#777;">(portrait)</span></h4>
+          <pre>
++------------------------------+
+|  Local Foodie Blog           |
+|  = (menu)                    |
++------------------------------+
+|  Hero Banner                 |
+|  "Discover Your City's       |
+|   Best Bites"                |
+|  [ Explore -> ]              |
++------------------------------+
+|  Restaurant Spotlight        |
+|  [card]  [card]  [card]      |
++------------------------------+
+|  Latest Recipes              |
+|  [card]  [card]              |
++------------------------------+
+|  Upcoming Events             |
+|  - Event 1                   |
+|  - Event 2                   |
+|  - Event 3                   |
++------------------------------+
+|  Newsletter Signup           |
+|  [email field] [Subscribe]   |
++------------------------------+
+|  Footer / Social Links       |
++------------------------------+
+          </pre>
+          <p>Single column, stacked. Nav collapses to a hamburger menu, cards stack vertically, touch targets stay at least 44px for thumbs.</p>
+        </div>
+
+        <div class="wireframe-card">
+          <h4>Desktop <span style="font-weight:400; font-size:0.75rem; color:#777;">(wide screens)</span></h4>
+          <pre>
++--------------------------------------------------------+
+|  Local Foodie Blog    Home  Reviews  Recipes  Events    |
+|                        About  Contact                   |
++--------------------------------------------------------+
+|  Hero Banner (full width)                                |
+|  "Discover Your City's Best Bites"                      |
+|  [ Explore -> ]                                          |
++--------------------------------------------------------+
+|  Restaurant Spotlight       |  Latest Recipes            |
+|  [card] [card] [card]       |  [card] [card]             |
+|                              |  [card] [card]             |
++------------------------------+----------------------------+
+|  Upcoming Events             |  Newsletter                |
+|  - Event 1                   |  [email field]             |
+|  - Event 2                   |  [Subscribe]                |
+|  - Event 3                   |                             |
+|  - Event 4                   |  Featured Post              |
++------------------------------+----------------------------+
+|  Footer / Social / Contact / About                        |
++--------------------------------------------------------+
+          </pre>
+          <p>Full-width nav bar, two-column grid for main content, second two-column row for events and newsletter. Hero spans the full width.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="footer-note">
+      <p><strong>References:</strong> All original content and design. External images and recipes will be cited on the final site's references page.</p>
+      <p>Site Plan — WDD 131 Dynamic Web Fundamentals · BYU-Idaho</p>
+    </div>
+
+  </div>
+
+</body>
+</html>
