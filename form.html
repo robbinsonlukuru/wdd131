@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Submit a product review including a star rating, useful features, and written feedback.">
+    <meta name="author" content="Robbinson Lukuru">
     <title>WDD 131 · Product Review</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,14 +12,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles/form.css">
+    <script src="scripts/form.js" defer></script>
 </head>
 <body>
 <div class="container">
-    <h1>Product Review</h1>
-    <div class="subhead">Share your experience · all fields except review & name are required</div>
+    <header>
+        <h1>Product Review</h1>
+        <p class="subhead">Share your experience · all fields except review & name are required</p>
+    </header>
 
     <form id="reviewForm" method="get" action="review.html">
-       
         <div class="form-group">
             <label for="productName">Product name <span class="required-star">*</span></label>
             <select id="productName" name="productName" required>
@@ -25,34 +29,61 @@
             </select>
         </div>
 
-      
         <div class="form-group">
             <label>Overall rating <span class="required-star">*</span></label>
             <div class="rating-group">
-                <div class="rating-options" id="ratingContainer"></div>
-        
+                <div class="rating-options" id="ratingContainer">
+                    <label class="rating-label" for="rating_1">
+                        <input type="radio" id="rating_1" name="rating" value="1" required>
+                        <span class="rating-stars">★☆☆☆☆</span>
+                        <span class="rating-num">1</span>
+                    </label>
+                    <label class="rating-label" for="rating_2">
+                        <input type="radio" id="rating_2" name="rating" value="2" required>
+                        <span class="rating-stars">★★☆☆☆</span>
+                        <span class="rating-num">2</span>
+                    </label>
+                    <label class="rating-label" for="rating_3">
+                        <input type="radio" id="rating_3" name="rating" value="3" required>
+                        <span class="rating-stars">★★★☆☆</span>
+                        <span class="rating-num">3</span>
+                    </label>
+                    <label class="rating-label" for="rating_4">
+                        <input type="radio" id="rating_4" name="rating" value="4" required>
+                        <span class="rating-stars">★★★★☆</span>
+                        <span class="rating-num">4</span>
+                    </label>
+                    <label class="rating-label" for="rating_5">
+                        <input type="radio" id="rating_5" name="rating" value="5" required>
+                        <span class="rating-stars">★★★★★</span>
+                        <span class="rating-num">5</span>
+                    </label>
+                </div>
+                <div class="field-hint">★ = 1 · ★★★★★ = 5</div>
             </div>
         </div>
 
-        
         <div class="form-group">
             <label for="installDate">Date of installation <span class="required-star">*</span></label>
             <input type="date" id="installDate" name="installDate" required>
         </div>
 
-        
         <div class="form-group">
             <label>Useful features (check all that apply)</label>
-            <div class="checkbox-grid" id="featuresContainer"></div>
+            <div class="checkbox-grid" id="featuresContainer">
+                <label for="feat_battery"><input type="checkbox" id="feat_battery" name="features" value="battery"> Battery life</label>
+                <label for="feat_sound"><input type="checkbox" id="feat_sound" name="features" value="sound"> Sound quality</label>
+                <label for="feat_design"><input type="checkbox" id="feat_design" name="features" value="design"> Design / ergonomics</label>
+                <label for="feat_speed"><input type="checkbox" id="feat_speed" name="features" value="speed"> Performance</label>
+                <label for="feat_connect"><input type="checkbox" id="feat_connect" name="features" value="connect"> Connectivity</label>
+            </div>
         </div>
 
-        
         <div class="form-group">
             <label for="reviewText">Written review <span class="optional">(optional)</span></label>
             <textarea id="reviewText" name="reviewText" placeholder="What did you like or dislike?"></textarea>
         </div>
 
-       
         <div class="form-group">
             <label for="userName">Your name <span class="optional">(optional)</span></label>
             <input type="text" id="userName" name="userName" placeholder="e.g. Alex">
@@ -61,12 +92,11 @@
         <button type="submit" class="btn-submit">Submit review</button>
     </form>
 </div>
+
 <footer class="site-footer">
     <p>©2026 &nbsp;🌸&nbsp; Robbinson Lukuru &nbsp;🌸</p>
-    <p>Nairobi Kenya</p>
+    <p>Nairobi, Kenya</p>
     <p>Last Modification: <span id="lastModified"></span></p>
 </footer>
-
-<script src="scripts/form.js"></script>
 </body>
 </html>
