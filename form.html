@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 131 · Product Review</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/form.css">
+</head>
+<body>
+<div class="container">
+    <h1>Product Review</h1>
+    <div class="subhead">Share your experience · all fields except review & name are required</div>
+
+    <form id="reviewForm" method="get" action="review.html">
+       
+        <div class="form-group">
+            <label for="productName">Product name <span class="required-star">*</span></label>
+            <select id="productName" name="productName" required>
+                <option value="" disabled selected>Select a Product …</option>
+            </select>
+        </div>
+
+      
+        <div class="form-group">
+            <label>Overall rating <span class="required-star">*</span></label>
+            <div class="rating-group">
+                <div class="rating-options" id="ratingContainer"></div>
+        
+            </div>
+        </div>
+
+        
+        <div class="form-group">
+            <label for="installDate">Date of installation <span class="required-star">*</span></label>
+            <input type="date" id="installDate" name="installDate" required>
+        </div>
+
+        
+        <div class="form-group">
+            <label>Useful features (check all that apply)</label>
+            <div class="checkbox-grid" id="featuresContainer"></div>
+        </div>
+
+        
+        <div class="form-group">
+            <label for="reviewText">Written review <span class="optional">(optional)</span></label>
+            <textarea id="reviewText" name="reviewText" placeholder="What did you like or dislike?"></textarea>
+        </div>
+
+       
+        <div class="form-group">
+            <label for="userName">Your name <span class="optional">(optional)</span></label>
+            <input type="text" id="userName" name="userName" placeholder="e.g. Alex">
+        </div>
+
+        <button type="submit" class="btn-submit">Submit review</button>
+    </form>
+</div>
+<div class="footer-note">
+    <span>© Brigham Young University-Idaho · WDD 131</span>
+</div>
+
+<script src="scripts/form.js"></script>
+</body>
+</html>

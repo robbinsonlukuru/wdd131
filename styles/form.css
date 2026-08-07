@@ -1,0 +1,228 @@
+/* ===== Base ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #f1f5f9;
+    color: #1e293b;
+    line-height: 1.5;
+    padding: 1.5rem 1rem;
+}
+
+.container {
+    max-width: 640px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    margin: 0 0 0.25rem;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.subhead {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 1.75rem;
+}
+
+/* ===== Form layout ===== */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+    color: #334155;
+}
+
+.required-star {
+    color: #dc2626;
+}
+
+.optional {
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+/* ===== Inputs, select, textarea ===== */
+select,
+input[type="date"],
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 0.6rem 0.75rem;
+    font-family: inherit;
+    font-size: 0.95rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background-color: #f8fafc;
+    color: #1e293b;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+select:focus,
+input[type="date"]:focus,
+input[type="text"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    background-color: #ffffff;
+}
+
+textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+/* ===== Rating group (radios) ===== */
+.rating-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.rating-options {
+    display: flex;
+    gap: 0.6rem;
+}
+
+.rating-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.4rem 0.6rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.rating-label:has(input:checked) {
+    border-color: #2563eb;
+    background-color: #eff6ff;
+}
+
+.rating-label input[type="radio"] {
+    margin-bottom: 0.3rem;
+}
+
+.rating-stars {
+    display: block;
+    font-size: 1.3rem;
+    line-height: 1.2;
+    color: #f59e0b;
+}
+
+.rating-num {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: #475569;
+}
+
+.field-hint {
+    font-size: 0.78rem;
+    color: #94a3b8;
+}
+
+/* ===== Checkbox grid (useful features) ===== */
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem 1rem;
+}
+
+.checkbox-grid label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: #334155;
+    cursor: pointer;
+}
+
+.checkbox-grid input[type="checkbox"] {
+    width: 1.05rem;
+    height: 1.05rem;
+    accent-color: #2563eb;
+}
+
+/* ===== Submit button ===== */
+.btn-submit {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #2563eb;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.btn-submit:hover {
+    background-color: #1d4ed8;
+}
+
+.btn-submit:active {
+    background-color: #1e40af;
+}
+
+/* ===== Footer ===== */
+.footer-note {
+    max-width: 640px;
+    margin: 1rem auto 0;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+/* ===== review.html specific ===== */
+.container a {
+    color: #2563eb;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.container a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 480px) {
+    .container {
+        padding: 1.5rem 1.25rem;
+        border-radius: 0;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    .rating-options {
+        gap: 0.4rem;
+    }
+
+    .rating-label {
+        padding: 0.3rem 0.4rem;
+    }
+
+    .checkbox-grid {
+        grid-template-columns: 1fr;
+    }
+}
