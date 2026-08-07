@@ -1,4 +1,4 @@
-/* ===== Base ===== */
+
 * {
     box-sizing: border-box;
 }
@@ -34,7 +34,7 @@ h1 {
     margin-bottom: 1.75rem;
 }
 
-/* ===== Form layout ===== */
+
 .form-group {
     margin-bottom: 1.5rem;
 }
@@ -57,7 +57,7 @@ label {
     color: #94a3b8;
 }
 
-/* ===== Inputs, select, textarea ===== */
+
 select,
 input[type="date"],
 input[type="text"],
@@ -88,7 +88,7 @@ textarea {
     resize: vertical;
 }
 
-/* ===== Rating group (radios) ===== */
+
 .rating-group {
     display: flex;
     flex-direction: column;
@@ -138,7 +138,7 @@ textarea {
     color: #94a3b8;
 }
 
-/* ===== Checkbox grid (useful features) ===== */
+
 .checkbox-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -161,7 +161,7 @@ textarea {
     accent-color: #2563eb;
 }
 
-/* ===== Submit button ===== */
+
 .btn-submit {
     width: 100%;
     padding: 0.75rem;
@@ -183,16 +183,6 @@ textarea {
     background-color: #1e40af;
 }
 
-/* ===== Footer ===== */
-.footer-note {
-    max-width: 640px;
-    margin: 1rem auto 0;
-    text-align: center;
-    font-size: 0.8rem;
-    color: #94a3b8;
-}
-
-/* ===== review.html specific ===== */
 .container a {
     color: #2563eb;
     font-weight: 500;
@@ -203,7 +193,21 @@ textarea {
     text-decoration: underline;
 }
 
-/* ===== Mobile ===== */
+
+.site-footer {
+    background-color: #2e0a35;
+    color: #ffffff;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: 2rem;
+    font-size: 1rem;
+}
+
+.site-footer p {
+    margin: 0.3rem 0;
+}
+
+
 @media (max-width: 480px) {
     .container {
         padding: 1.5rem 1.25rem;

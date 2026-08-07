@@ -7,7 +7,6 @@
         { id: "p5", name: "USB-C Hub" }
     ];
 
-    // Product select
     const selectEl = document.getElementById('productName');
     if (selectEl) {
         products.forEach(p => {
@@ -18,7 +17,6 @@
         });
     }
 
-    // Rating radios (1–5, shared name)
     const ratingContainer = document.getElementById('ratingContainer');
     if (ratingContainer) {
         for (let i = 1; i <= 5; i++) {
@@ -45,7 +43,6 @@
         }
     }
 
-    // Useful features checkboxes
     const featureList = [
         { id: 'battery', name: 'Battery life' },
         { id: 'sound', name: 'Sound quality' },
@@ -68,10 +65,14 @@
         });
     }
 
-    // Default date = today
     const dateInput = document.getElementById('installDate');
     if (dateInput) {
         const today = new Date();
         dateInput.value = today.toISOString().split('T')[0];
+    }
+
+    const lastModifiedEl = document.getElementById('lastModified');
+    if (lastModifiedEl) {
+        lastModifiedEl.textContent = document.lastModified;
     }
 })();
