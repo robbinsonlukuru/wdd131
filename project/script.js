@@ -5,103 +5,111 @@
     restaurants: [
       {
         id: 'r1',
-        name: 'The Rustic Spoon',
-        cuisine: 'Italian',
-        description: 'Cozy atmosphere with handmade pasta and wood-fired pizzas. A hidden gem for date night.',
+        name: 'Kibandaski Cafe',
+        cuisine: 'Kenyan',
+        description: 'Authentic local cuisine with nyama choma, ugali, and sukuma wiki. A true taste of Nairobi.',
         image: 'https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=600',
-        rating: 4.8
+        rating: 4.9
       },
       {
         id: 'r2',
-        name: 'Green Leaf Bistro',
-        cuisine: 'Farm-to-Table',
-        description: 'Seasonal ingredients sourced from local farms. Menu changes weekly with the harvest.',
+        name: 'Talisman Restaurant',
+        cuisine: 'African Fusion',
+        description: 'Elegant dining in Karen with a blend of African and international flavors. Famous for their lamb chops.',
         image: 'https://images.pexels.com/photos/1640773/pexels-photo-1640773.jpeg?auto=compress&cs=tinysrgb&w=600',
-        rating: 4.6
+        rating: 4.8
       },
       {
         id: 'r3',
-        name: 'Harbor Fish Co.',
-        cuisine: 'Seafood',
-        description: 'Fresh catch delivered daily. Waterfront dining with stunning sunset views.',
+        name: 'Carnivore Restaurant',
+        cuisine: 'Barbecue',
+        description: 'Nairobi\'s iconic meat lovers paradise. Game meat and unlimited roasted meats carved at your table.',
         image: 'https://images.pexels.com/photos/2323398/pexels-photo-2323398.jpeg?auto=compress&cs=tinysrgb&w=600',
         rating: 4.7
       },
       {
         id: 'r4',
-        name: 'Spice Route Kitchen',
-        cuisine: 'Indian',
-        description: 'Authentic Indian cuisine with bold flavors and aromatic spices. Family recipes passed down generations.',
+        name: 'Mama Oliech Restaurant',
+        cuisine: 'Kenyan',
+        description: 'Famous for fried fish (tilapia) with ugali and kachumbari. A local favorite in Eastleigh.',
         image: 'https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=600',
-        rating: 4.5
+        rating: 4.6
+      },
+      {
+        id: 'r5',
+        name: 'Java House',
+        cuisine: 'Cafe',
+        description: 'Nairobi\'s favorite coffee house serving breakfast, lunch, and amazing Kenyan coffee.',
+        image: 'https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=600',
+        rating: 4.4
       }
     ],
     recipes: [
       {
         id: 'rec1',
-        name: 'Zucchini and Herb Frittata',
-        description: 'Perfect for using up farmer\'s market zucchini. Light, fluffy, and packed with fresh herbs.',
+        name: 'Nyama Choma with Kachumbari',
+        description: 'Grilled meat served with fresh tomato and onion salsa. A Kenyan barbecue classic.',
         image: 'https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=600',
-        prepTime: '25 min',
-        difficulty: 'Easy'
+        prepTime: '45 min',
+        difficulty: 'Medium'
       },
       {
         id: 'rec2',
-        name: 'Heirloom Tomato Pasta',
-        description: 'Simple, fresh, and bursting with summer flavor. Just tomatoes, garlic, basil, and love.',
-        image: 'https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=600',
-        prepTime: '20 min',
+        name: 'Ugali and Sukuma Wiki',
+        description: 'Staple Kenyan meal - cornmeal porridge with sautéed collard greens. Simple and nutritious.',
+        image: 'https://images.pexels.com/photos/1640773/pexels-photo-1640773.jpeg?auto=compress&cs=tinysrgb&w=600',
+        prepTime: '30 min',
         difficulty: 'Easy'
       },
       {
         id: 'rec3',
-        name: 'Grilled Peach and Burrata Salad',
-        description: 'Sweet grilled peaches, creamy burrata, and a honey-balsamic drizzle. Pure summer.',
-        image: 'https://images.pexels.com/photos/1640773/pexels-photo-1640773.jpeg?auto=compress&cs=tinysrgb&w=600',
-        prepTime: '15 min',
+        name: 'Kenyan Pilau Rice',
+        description: 'Fragrant spiced rice with beef or chicken. A Swahili coastal favorite for special occasions.',
+        image: 'https://images.pexels.com/photos/2323398/pexels-photo-2323398.jpeg?auto=compress&cs=tinysrgb&w=600',
+        prepTime: '40 min',
         difficulty: 'Medium'
       },
       {
         id: 'rec4',
-        name: 'Roasted Butternut Soup',
-        description: 'Velvety smooth soup with a hint of ginger and coconut milk. Perfect for chilly evenings.',
-        image: 'https://images.pexels.com/photos/2323398/pexels-photo-2323398.jpeg?auto=compress&cs=tinysrgb&w=600',
-        prepTime: '40 min',
-        difficulty: 'Medium'
+        name: 'Maharagwe (Bean Stew)',
+        description: 'Coconut bean stew with tomatoes and spices. A vegetarian Kenyan comfort food.',
+        image: 'https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=600',
+        prepTime: '35 min',
+        difficulty: 'Easy'
       }
     ],
     events: [
       {
         id: 'e1',
-        name: 'Farmers Market Fiesta',
-        date: 'August 21, 2026',
-        time: '9:00 AM – 2:00 PM',
-        location: 'Central Square',
-        description: 'Local vendors, live music, and cooking demonstrations. Sample the season\'s best produce.'
+        name: 'Nairobi Street Food Festival',
+        date: 'August 28, 2026',
+        time: '10:00 AM – 8:00 PM',
+        location: 'Uhuru Park',
+        description: 'Nairobi\'s largest street food gathering featuring 50+ local vendors, live music, and cooking competitions.'
       },
       {
         id: 'e2',
-        name: 'Wine and Dine Night',
+        name: 'Karen Food and Wine Fair',
         date: 'September 5, 2026',
-        time: '7:00 PM – 10:00 PM',
-        location: 'The Cellar',
-        description: 'Five-course dinner with wine pairings. Featuring local chefs and sommeliers.'
+        time: '2:00 PM – 10:00 PM',
+        location: 'Karen Blixen Museum Gardens',
+        description: 'Premium wine tasting with gourmet food from Nairobi\'s top chefs. Live jazz performances.'
       },
       {
         id: 'e3',
-        name: 'Street Food Festival',
+        name: 'Kibandaski Farmers Market',
         date: 'September 12, 2026',
-        time: '11:00 AM – 8:00 PM',
-        location: 'Waterfront Park',
-        description: 'Global street food from 30+ vendors. Live cooking competitions and family activities.'
+        time: '7:00 AM – 2:00 PM',
+        location: 'Kibandaski Market',
+        description: 'Fresh local produce, artisanal foods, and homemade Kenyan delicacies. Meet the farmers!'
       },
       {
         id: 'e4',
-        name: 'Pie Baking Championship',
+        name: 'Carnivore Grill & Chill',
         date: 'September 19, 2026',
-        time: '1:00 PM – 5:00 PM',
-        location: 'Community Hall',
-        description: 'Amateur bakers compete for the golden rolling pin. Tastings and workshops included.'
+        time: '6:00 PM – 11:00 PM',
+        location: 'Carnivore Grounds',
+        description: 'All-you-can-eat barbecue night with live entertainment. Special game meat tasting menu available.'
       }
     ]
   };
@@ -225,9 +233,9 @@
 
     const html = `
       <section>
-        <h2>Discover Your City's Best Bites</h2>
+        <h2>Discover Nairobi's Best Bites</h2>
         <p style="font-size:1.1rem; color:#5D6D7E;">
-          Explore local restaurants, seasonal recipes, and community events.
+          Explore local restaurants, seasonal recipes, and community events in Nairobi.
           ${savedBadge}
         </p>
         <div class="grid">${cardsHtml}</div>
@@ -267,8 +275,8 @@
 
     const html = `
       <section>
-        <h2>Seasonal Recipes</h2>
-        <p style="color:#5D6D7E;">Fresh, seasonal recipes from our community. Save your favorites!</p>
+        <h2>Seasonal Kenyan Recipes</h2>
+        <p style="color:#5D6D7E;">Fresh, authentic recipes from our community. Save your favorites!</p>
         <div class="grid">${cardsHtml}</div>
       </section>
     `;
@@ -288,7 +296,7 @@
 
     const html = `
       <section>
-        <h2>Upcoming Food Events</h2>
+        <h2>Upcoming Food Events in Nairobi</h2>
         <p style="color:#5D6D7E;">Mark your calendar for these tasty gatherings in our community.</p>
         <div class="grid">${cardsHtml}</div>
       </section>
@@ -340,10 +348,10 @@
 
         <div class="contact-info">
           <h3>📍 Visit or Reach Us</h3>
-          <p><span class="icon">📌</span> <strong>Address:</strong> 123 Foodie Lane, Culinary City, CC 12345</p>
-          <p><span class="icon">📧</span> <strong>Email:</strong> hello@localfoodieblog.com</p>
-          <p><span class="icon">🕐</span> <strong>Hours:</strong> Monday – Friday, 9:00 AM – 6:00 PM</p>
-          <p><span class="icon">📞</span> <strong>Phone:</strong> (555) 123-4567</p>
+          <p><span class="icon">📌</span> <strong>Address:</strong> Kibandaski Lane, Nairobi, Kenya</p>
+          <p><span class="icon">📧</span> <strong>Email:</strong> hello@kibandaski.com</p>
+          <p><span class="icon">🕐</span> <strong>Hours:</strong> Monday – Saturday, 8:00 AM – 8:00 PM</p>
+          <p><span class="icon">📞</span> <strong>Phone:</strong> +254 700 123 456</p>
         </div>
       </section>
     `;
@@ -455,7 +463,7 @@
           const countSpan = document.querySelector('p span[style*="background"]');
           if (countSpan) {
             const count = getSavedItems().length;
-            countSpan.textContent = '❤️ ' + count + ' saved';
+            countSpan.textContent = `❤️ ${count} saved`;
           }
         } else {
           this.textContent = '⭐ Already saved';
@@ -490,11 +498,11 @@
       const success = addNewsletterSub(email);
 
       if (success) {
-        feedback.innerHTML = '✅ Thanks, ' + name + '! You are subscribed to our newsletter.';
+        feedback.innerHTML = `✅ Thanks, ${name}! You are subscribed to our newsletter.`;
         feedback.style.color = '#27AE60';
         this.reset();
       } else {
-        feedback.innerHTML = 'ℹ️ ' + name + ', you are already subscribed!';
+        feedback.innerHTML = `ℹ️ ${name}, you are already subscribed!`;
         feedback.style.color = '#F39C12';
       }
     });
@@ -600,8 +608,8 @@
     routePage();
 
     const saved = getSavedItems();
-    console.log('📦 ' + saved.length + ' items saved in localStorage');
-    console.log('📧 ' + getNewsletterSubs().length + ' newsletter subscribers');
+    console.log(`📦 ${saved.length} items saved in localStorage`);
+    console.log(`📧 ${getNewsletterSubs().length} newsletter subscribers`);
   });
 
 })();
