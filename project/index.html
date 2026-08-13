@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Local Foodie Blog – discover local restaurants, seasonal recipes, and food events." />
+  <meta name="author" content="Robbinson" />
+  <title>Local Foodie Blog</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  
+  <style>
+    /* ----- Reset ----- */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Open Sans', Arial, sans-serif;
+      background: #FAF8F5;
+      color: #2C3E50;
+      padding: 1rem;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #FFFFFF;
+      border-radius: 1.5rem;
+      padding: 1.5rem 2rem;
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 12px 40px rgba(44, 62, 80, 0.08);
+    }
+    h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; color: #C0392B; }
+    h2 { border-bottom: 4px solid #F1C40F; padding-bottom: 0.4rem; margin: 1.5rem 0 1rem; }
+    
+    /* Navigation */
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      background: #FAF8F5;
+      padding: 0.6rem 1.2rem;
+      border-radius: 3rem;
+      margin-bottom: 2rem;
+      border: 1px solid #F0ECE6;
+    }
+    .nav-brand {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #C0392B;
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.2rem;
+    }
+    .nav-links a {
+      color: #2C3E50;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .nav-links a:hover { background: #F0ECE6; }
+    .nav-links a.active {
+      color: #FFFFFF;
+      background: #C0392B;
+    }
+    .nav-links a.saved-link { background: #F1C40F; color: #2C3E50; }
+    .nav-links a.saved-link.active { background: #C0392B; color: #FFFFFF; }
+    .hamburger {
+      display: none;
+      font-size: 2rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    
+    /* Grid & Cards */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 1.5rem 0;
+    }
+    .card {
+      background: #FFFFFF;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      border: 1px solid #F0ECE6;
+      transition: all 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(192, 57, 43, 0.10);
+    }
+    .card-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 0.75rem;
+      margin: 0.5rem 0;
+    }
+    .card .meta {
+      font-size: 0.85rem;
+      color: #5D6D7E;
+      margin: 0.2rem 0;
+    }
+    .card .tag {
+      background: #F1C40F;
+      padding: 0.1rem 0.6rem;
+      border-radius: 1rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1.5rem;
+      border-radius: 2rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      font-family: 'Open Sans', Arial, sans-serif;
+    }
+    .btn-primary { background: #C0392B; color: #FFFFFF; }
+    .btn-primary:hover { background: #A93226; }
+    .btn-primary:disabled { opacity: 0.5; cursor: default; }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #C0392B;
+      color: #C0392B;
+    }
+    .btn-outline:hover { background: #C0392B; color: #FFFFFF; }
+    .btn-sm { padding: 0.3rem 0.8rem; font-size: 0.8rem; }
+    
+    /* Forms */
+    .form-group { margin: 0.8rem 0; }
+    .form-group label { display: block; font-weight: 600; margin-bottom: 0.2rem; }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%;
+      padding: 0.7rem 1.2rem;
+      border: 2px solid #E8E4DE;
+      border-radius: 2rem;
+      font-family: 'Open Sans', Arial, sans-serif;
+      font-size: 1rem;
+      background: #FAF8F5;
+    }
+    .form-group input:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: #C0392B;
+    }
+    .form-group textarea { border-radius: 1rem; min-height: 80px; resize: vertical; }
+    .form-row { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .form-row .form-group { flex: 1 1 200px; }
+    
+    .highlight-box {
+      background: #FAF8F5;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      margin-top: 1.5rem;
+      border: 1px solid #F0ECE6;
+    }
+    .footer-note {
+      margin-top: auto;
+      padding-top: 1.5rem;
+      border-top: 2px solid #F0ECE6;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #5D6D7E;
+    }
+    .footer-note strong { color: #C0392B; }
+    .empty-state { padding: 3rem 1rem; text-align: center; color: #5D6D7E; }
+    .saved-item {
+      background: #FAF8F5;
+      padding: 0.8rem 1.2rem;
+      border-radius: 0.75rem;
+      margin-bottom: 0.6rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid #F0ECE6;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container { padding: 1rem; }
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 0.3rem;
+        padding-top: 0.8rem;
+        border-top: 1px solid #F0ECE6;
+        margin-top: 0.5rem;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { width: 100%; text-align: center; }
+      .hamburger { display: block; }
+      .grid { grid-template-columns: 1fr; }
+      .form-row { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Navigation -->
+    <nav>
+      <span class="nav-brand">🍽️ Local Foodie</span>
+      <button class="hamburger" id="hamburgerBtn">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#" data-page="home" class="active">Home</a>
+        <a href="#" data-page="recipes">Recipes</a>
+        <a href="#" data-page="events">Events</a>
+        <a href="#" data-page="contact">Contact</a>
+        <a href="#" data-page="saved" class="saved-link">❤️ Saved</a>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="pageContent"></main>
+
+    <!-- Footer -->
+    <footer class="footer-note">
+      <p><strong>Local Foodie Blog</strong> — WDD 131 Dynamic Web Fundamentals · BYU-Idaho</p>
+      <p style="font-size:0.8rem;">Built from scratch with ❤️ using HTML, CSS, and JavaScript</p>
+    </footer>
+
+  </div>
+
+  <script>
+    (function() {
+      'use strict';
+
+      // ============================================================
+      // DATA
+      // ============================================================
+      const DATA = {
+        restaurants: [
+          { id: 'r1', name: 'The Rustic Spoon', cuisine: 'Italian', description: 'Cozy atmosphere with handmade pasta and wood-fired pizzas.', image: 'https://picsum.photos/seed/rustic/600/400', rating: 4.8 },
+          { id: 'r2', name: 'Green Leaf Bistro', cuisine: 'Farm-to-Table', description: 'Seasonal ingredients sourced from local farms.', image: 'https://picsum.photos/seed/greenleaf/600/400', rating: 4.6 },
+          { id: 'r3', name: 'Harbor Fish Co.', cuisine: 'Seafood', description: 'Fresh catch delivered daily with waterfront views.', image: 'https://picsum.photos/seed/harbor/600/400', rating: 4.7 },
+          { id: 'r4', name: 'Spice Route Kitchen', cuisine: 'Indian', description: 'Authentic Indian cuisine with bold flavors.', image: 'https://picsum.photos/seed/spice/600/400', rating: 4.5 }
+        ],
+        recipes: [
+          { id: 'rec1', name: 'Zucchini & Herb Frittata', description: 'Perfect for farmer\'s market zucchini.', image: 'https://picsum.photos/seed/frittata/600/400', prepTime: '25 min', difficulty: 'Easy' },
+          { id: 'rec2', name: 'Heirloom Tomato Pasta', description: 'Simple, fresh, and bursting with summer flavor.', image: 'https://picsum.photos/seed/tomato/600/400', prepTime: '20 min', difficulty: 'Easy' },
+          { id: 'rec3', name: 'Grilled Peach & Burrata Salad', description: 'Sweet grilled peaches with creamy burrata.', image: 'https://picsum.photos/seed/peach/600/400', prepTime: '15 min', difficulty: 'Medium' },
+          { id: 'rec4', name: 'Roasted Butternut Soup', description: 'Velvety smooth soup with ginger and coconut milk.', image: 'https://picsum.photos/seed/soup/600/400', prepTime: '40 min', difficulty: 'Medium' }
+        ],
+        events: [
+          { id: 'e1', name: 'Farmers Market Fiesta', date: 'August 21, 2026', time: '9:00 AM – 2:00 PM', location: 'Central Square', description: 'Local vendors, live music, and cooking demonstrations.' },
+          { id: 'e2', name: 'Wine & Dine Night', date: 'September 5, 2026', time: '7:00 PM – 10:00 PM', location: 'The Cellar', description: 'Five-course dinner with wine pairings.' },
+          { id: 'e3', name: 'Street Food Festival', date: 'September 12, 2026', time: '11:00 AM – 8:00 PM', location: 'Waterfront Park', description: 'Global street food from 30+ vendors.' },
+          { id: 'e4', name: 'Pie Baking Championship', date: 'September 19, 2026', time: '1:00 PM – 5:00 PM', location: 'Community Hall', description: 'Amateur bakers compete for the golden rolling pin.' }
+        ]
+      };
+
+      // ============================================================
+      // LOCAL STORAGE
+      // ============================================================
+      function getSavedItems() {
+        try { return JSON.parse(localStorage.getItem('foodieSaves')) || []; } catch { return []; }
+      }
+      function saveItem(item) {
+        const saved = getSavedItems();
+        if (!saved.some(s => s.id === item.id)) {
+          saved.push(item);
+          localStorage.setItem('foodieSaves', JSON.stringify(saved));
+          return true;
+        }
+        return false;
+      }
+      function removeItem(id) {
+        let saved = getSavedItems();
+        saved = saved.filter(item => item.id !== id);
+        localStorage.setItem('foodieSaves', JSON.stringify(saved));
+      }
+      function getNewsletterSubs() {
+        try { return JSON.parse(localStorage.getItem('newsletterSubs')) || []; } catch { return []; }
+      }
+      function addNewsletterSub(email) {
+        const subs = getNewsletterSubs();
+        if (!subs.includes(email)) {
+          subs.push(email);
+          localStorage.setItem('newsletterSubs', JSON.stringify(subs));
+          return true;
+        }
+        return false;
+      }
+
+      // ============================================================
+      // BUILD CARD
+      // ============================================================
+      function buildCard(item, type) {
+        if (type === 'restaurant') {
+          return `
+            <div class="card">
+              <h3>${item.name}</h3>
+              <div class="meta"><span class="tag">${item.cuisine}</span> ⭐${item.rating}</div>
+              <img class="card-image" src="${item.image}" alt="${item.name}" loading="lazy" />
+              <p>${item.description}</p>
+              <button class="btn btn-primary save-btn" data-id="${item.id}" data-name="${item.name}" data-type="${type}">❤️ Save</button>
+            </div>
+          `;
+        } else if (type === 'recipe') {
+          return `
+            <div class="card">
+              <h3>${item.name}</h3>
+              <div class="meta">⏱️ ${item.prepTime} <span class="tag">${item.difficulty}</span></div>
+              <img class="card-image" src="${item.image}" alt="${item.name}" loading="lazy" />
+              <p>${item.description}</p>
+              <button class="btn btn-primary save-btn" data-id="${item.id}" data-name="${item.name}" data-type="${type}">❤️ Save</button>
+            </div>
+          `;
+        } else if (type === 'event') {
+          return `
+            <div class="card">
+              <h3>${item.name}</h3>
+              <div class="meta">📅 ${item.date} · ${item.time}</div>
+              <p><strong>📍 ${item.location}</strong></p>
+              <p>${item.description}</p>
+              <button class="btn btn-primary save-btn" data-id="${item.id}" data-name="${item.name}" data-type="${type}">❤️ Save</button>
+            </div>
+          `;
+        }
+        return '';
+      }
+
+      // ============================================================
+      // RENDER FUNCTIONS
+      // ============================================================
+      function renderHome() {
+        const container = document.getElementById('pageContent');
+        const html = `
+          <section>
+            <h2>Discover Your City's Best Bites</h2>
+            <p style="color:#5D6D7E;">Explore local restaurants, seasonal recipes, and community events.</p>
+            <div class="grid">${DATA.restaurants.map(r => buildCard(r, 'restaurant')).join('')}</div>
+            <div class="highlight-box">
+              <h3>📬 Stay in the Loop</h3>
+              <p>Get weekly foodie updates straight to your inbox.</p>
+              <form id="newsletterForm">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="newsEmail">Email Address</label>
+                    <input type="email" id="newsEmail" placeholder="you@example.com" required />
+                  </div>
+                  <div class="form-group" style="display:flex; align-items:flex-end;">
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                  </div>
+                </div>
+                <div id="formFeedback" style="margin-top:0.5rem; font-weight:600;"></div>
+              </form>
+            </div>
+          </section>
+        `;
+        container.innerHTML = html;
+        attachSaveListeners();
+        setupNewsletterForm();
+        setActiveNav('home');
+      }
+
+      function renderRecipes() {
+        const container = document.getElementById('pageContent');
+        container.innerHTML = `
+          <section>
+            <h2>Seasonal Recipes</h2>
+            <p style="color:#5D6D7E;">Fresh, seasonal recipes from our community.</p>
+            <div class="grid">${DATA.recipes.map(r => buildCard(r, 'recipe')).join('')}</div>
+          </section>
+        `;
+        attachSaveListeners();
+        setActiveNav('recipes');
+      }
+
+      function renderEvents() {
+        const container = document.getElementById('pageContent');
+        container.innerHTML = `
+          <section>
+            <h2>Upcoming Food Events</h2>
+            <p style="color:#5D6D7E;">Mark your calendar for these tasty gatherings.</p>
+            <div class="grid">${DATA.events.map(e => buildCard(e, 'event')).join('')}</div>
+          </section>
+        `;
+        attachSaveListeners();
+        setActiveNav('events');
+      }
+
+      function renderContact() {
+        const container = document.getElementById('pageContent');
+        container.innerHTML = `
+          <section>
+            <h2>📬 Get in Touch</h2>
+            <p style="color:#5D6D7E;">Have a food recommendation, recipe, or event to suggest? We'd love to hear from you!</p>
+            <div class="highlight-box">
+              <h3>Send Us a Message</h3>
+              <form id="contactForm">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="contactName">Your Name</label>
+                    <input type="text" id="contactName" placeholder="Jane Doe" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="contactEmail">Email Address</label>
+                    <input type="email" id="contactEmail" placeholder="jane@example.com" required />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="contactSubject">Subject</label>
+                  <select id="contactSubject">
+                    <option value="recommendation">Recommend a Restaurant</option>
+                    <option value="recipe">Share a Recipe</option>
+                    <option value="event">Suggest an Event</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="contactMessage">Message</label>
+                  <textarea id="contactMessage" rows="5" placeholder="Tell us about your food discovery..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+                <div id="contactFeedback" style="margin-top:0.8rem; font-weight:600;"></div>
+              </form>
+            </div>
+            <div style="background:#FAF8F5; padding:1.5rem; border-radius:1rem; margin-top:1.5rem; border:1px solid #F0ECE6;">
+              <h3>📍 Visit or Reach Us</h3>
+              <p><strong>Address:</strong> 123 Foodie Lane, Culinary City, CC 12345</p>
+              <p><strong>Email:</strong> hello@localfoodieblog.com</p>
+              <p><strong>Hours:</strong> Monday – Friday, 9:00 AM – 6:00 PM</p>
+            </div>
+          </section>
+        `;
+        setupContactForm();
+        setActiveNav('contact');
+      }
+
+      function renderSaved() {
+        const container = document.getElementById('pageContent');
+        const saved = getSavedItems();
+        let html = `<section><h2>❤️ Your Saved Favorites</h2><p>Items you've saved from across the blog.</p>`;
+        if (saved.length === 0) {
+          html += `<div class="empty-state"><span style="font-size:3rem;">🍽️</span><p>You haven't saved anything yet.</p><p class="text-muted">Explore and click "Save" on your favorites!</p></div>`;
+        } else {
+          html += `<div>`;
+          saved.forEach((item) => {
+            const typeLabels = { restaurant: '🍽️ Restaurant', recipe: '👨‍🍳 Recipe', event: '📅 Event' };
+            html += `
+              <div class="saved-item">
+                <div><strong>${item.name}</strong> <span style="font-size:0.7rem; background:#E8E4DE; padding:0.1rem 0.6rem; border-radius:1rem;">${typeLabels[item.type] || item.type}</span></div>
+                <button class="btn btn-outline btn-sm remove-save-btn" data-id="${item.id}">Remove</button>
+              </div>
+            `;
+          });
+          html += `</div>`;
+          html += `<div style="margin-top:1.5rem; text-align:center;"><button class="btn btn-outline" id="clearAllSaved">🗑️ Clear All</button></div>`;
+        }
+        html += `</section>`;
+        container.innerHTML = html;
+
+        document.querySelectorAll('.remove-save-btn').forEach(btn => {
+          btn.addEventListener('click', function() {
+            removeItem(this.dataset.id);
+            renderSaved();
+          });
+        });
+        const clearBtn = document.getElementById('clearAllSaved');
+        if (clearBtn) {
+          clearBtn.addEventListener('click', function() {
+            if (confirm('Remove all saved items?')) {
+              localStorage.removeItem('foodieSaves');
+              renderSaved();
+            }
+          });
+        }
+        setActiveNav('saved');
+      }
+
+      // ============================================================
+      // EVENT HANDLERS
+      // ============================================================
+      function attachSaveListeners() {
+        const saved = getSavedItems();
+        document.querySelectorAll('.save-btn').forEach(btn => {
+          if (saved.some(s => s.id === btn.dataset.id)) {
+            btn.textContent = '✅ Saved';
+            btn.disabled = true;
+          }
+          btn.addEventListener('click', function() {
+            const item = { id: this.dataset.id, name: this.dataset.name, type: this.dataset.type };
+            if (saveItem(item)) {
+              this.textContent = '✅ Saved!';
+              this.disabled = true;
+            }
+          });
+        });
+      }
+
+      function setupNewsletterForm() {
+        const form = document.getElementById('newsletterForm');
+        if (!form) return;
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const email = document.getElementById('newsEmail').value.trim();
+          const feedback = document.getElementById('formFeedback');
+          if (!email || !email.includes('@') || !email.includes('.')) {
+            feedback.innerHTML = '⚠️ Please enter a valid email address.';
+            feedback.style.color = '#C0392B';
+            return;
+          }
+          const name = email.split('@')[0];
+          if (addNewsletterSub(email)) {
+            feedback.innerHTML = `✅ Thanks, ${name}! You're subscribed.`;
+            feedback.style.color = '#27AE60';
+            this.reset();
+          } else {
+            feedback.innerHTML = `ℹ️ ${name}, you're already subscribed!`;
+            feedback.style.color = '#F39C12';
+          }
+        });
+      }
+
+      function setupContactForm() {
+        const form = document.getElementById('contactForm');
+        if (!form) return;
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const name = document.getElementById('contactName').value.trim();
+          const email = document.getElementById('contactEmail').value.trim();
+          const message = document.getElementById('contactMessage').value.trim();
+          const feedback = document.getElementById('contactFeedback');
+          if (!name || !email || !message) {
+            feedback.innerHTML = '⚠️ Please fill out all required fields.';
+            feedback.style.color = '#C0392B';
+            return;
+          }
+          if (!email.includes('@') || !email.includes('.')) {
+            feedback.innerHTML = '⚠️ Please enter a valid email address.';
+            feedback.style.color = '#C0392B';
+            return;
+          }
+          feedback.innerHTML = `✅ Thanks, ${name}! Your message has been sent. We'll respond within 24 hours.`;
+          feedback.style.color = '#27AE60';
+          let messages = JSON.parse(localStorage.getItem('contactMessages') || '[]');
+          messages.push({ name, email, message, date: new Date().toISOString() });
+          localStorage.setItem('contactMessages', JSON.stringify(messages));
+          this.reset();
+        });
+      }
+
+      // ============================================================
+      // NAVIGATION
+      // ============================================================
+      function setActiveNav(page) {
+        document.querySelectorAll('.nav-links a').forEach(link => {
+          link.classList.remove('active');
+          if (link.dataset.page === page) link.classList.add('active');
+        });
+      }
+
+      function setupNavigation() {
+        const hamburger = document.getElementById('hamburgerBtn');
+        const navLinks = document.getElementById('navLinks');
+        hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+        document.querySelectorAll('.nav-links a').forEach(link => {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            navLinks.classList.remove('open');
+            const page = this.dataset.page;
+            if (page === 'home') renderHome();
+            else if (page === 'recipes') renderRecipes();
+            else if (page === 'events') renderEvents();
+            else if (page === 'contact') renderContact();
+            else if (page === 'saved') renderSaved();
+          });
+        });
+      }
+
+      // ============================================================
+      // INIT
+      // ============================================================
+      document.addEventListener('DOMContentLoaded', function() {
+        setupNavigation();
+        renderHome();
+        console.log(`📦 ${getSavedItems().length} saved items`);
+        console.log(`📧 ${getNewsletterSubs().length} newsletter subscribers`);
+      });
+
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Upcoming food events from Local Foodie Blog – farmers markets, dinners, festivals, and more." />
+  <meta name="author" content="Robbinson" />
+  <title>Local Foodie Blog — Events</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+
+    <!-- ====== NAVIGATION ====== -->
+    <nav>
+      <div class="nav-brand">
+        <span>🍽️</span> Local Foodie
+      </div>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" data-page="home">Home</a>
+        <a href="recipes.html" data-page="recipes">Recipes</a>
+        <a href="events.html" data-page="events" class="active">Events</a>
+        <a href="contact.html" data-page="contact">Contact</a>
+        <a href="saved.html" data-page="saved" class="saved-link">❤️ Saved</a>
+      </div>
+    </nav>
+
+    <!-- ====== MAIN CONTENT ====== -->
+    <main id="pageContent"></main>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="footer-note">
+      <p><strong>Local Foodie Blog</strong> — WDD 131 Dynamic Web Fundamentals · BYU-Idaho</p>
+      <p style="font-size:0.8rem; margin-top:0.2rem;">
+        Built from scratch with ❤️ using HTML, CSS, and JavaScript
+      </p>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
