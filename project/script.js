@@ -1,15 +1,6 @@
-/**
- * LOCAL FOODIE BLOG - Main JavaScript
- * Original code by Robbinson
- * All functionality written from scratch
- */
-
 (function() {
   'use strict';
 
-  // ============================================================
-  // DATA STORE - Objects and Arrays
-  // ============================================================
   const DATA = {
     restaurants: [
       {
@@ -17,7 +8,7 @@
         name: 'The Rustic Spoon',
         cuisine: 'Italian',
         description: 'Cozy atmosphere with handmade pasta and wood-fired pizzas. A hidden gem for date night.',
-        image: 'https://picsum.photos/seed/rustic/600/400',
+        image: 'https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=600',
         rating: 4.8
       },
       {
@@ -25,7 +16,7 @@
         name: 'Green Leaf Bistro',
         cuisine: 'Farm-to-Table',
         description: 'Seasonal ingredients sourced from local farms. Menu changes weekly with the harvest.',
-        image: 'https://picsum.photos/seed/greenleaf/600/400',
+        image: 'https://images.pexels.com/photos/1640773/pexels-photo-1640773.jpeg?auto=compress&cs=tinysrgb&w=600',
         rating: 4.6
       },
       {
@@ -33,7 +24,7 @@
         name: 'Harbor Fish Co.',
         cuisine: 'Seafood',
         description: 'Fresh catch delivered daily. Waterfront dining with stunning sunset views.',
-        image: 'https://picsum.photos/seed/harbor/600/400',
+        image: 'https://images.pexels.com/photos/2323398/pexels-photo-2323398.jpeg?auto=compress&cs=tinysrgb&w=600',
         rating: 4.7
       },
       {
@@ -41,16 +32,16 @@
         name: 'Spice Route Kitchen',
         cuisine: 'Indian',
         description: 'Authentic Indian cuisine with bold flavors and aromatic spices. Family recipes passed down generations.',
-        image: 'https://picsum.photos/seed/spice/600/400',
+        image: 'https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=600',
         rating: 4.5
       }
     ],
     recipes: [
       {
         id: 'rec1',
-        name: 'Zucchini & Herb Frittata',
+        name: 'Zucchini and Herb Frittata',
         description: 'Perfect for using up farmer\'s market zucchini. Light, fluffy, and packed with fresh herbs.',
-        image: 'https://picsum.photos/seed/frittata/600/400',
+        image: 'https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=600',
         prepTime: '25 min',
         difficulty: 'Easy'
       },
@@ -58,15 +49,15 @@
         id: 'rec2',
         name: 'Heirloom Tomato Pasta',
         description: 'Simple, fresh, and bursting with summer flavor. Just tomatoes, garlic, basil, and love.',
-        image: 'https://picsum.photos/seed/tomato/600/400',
+        image: 'https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=600',
         prepTime: '20 min',
         difficulty: 'Easy'
       },
       {
         id: 'rec3',
-        name: 'Grilled Peach & Burrata Salad',
+        name: 'Grilled Peach and Burrata Salad',
         description: 'Sweet grilled peaches, creamy burrata, and a honey-balsamic drizzle. Pure summer.',
-        image: 'https://picsum.photos/seed/peach/600/400',
+        image: 'https://images.pexels.com/photos/1640773/pexels-photo-1640773.jpeg?auto=compress&cs=tinysrgb&w=600',
         prepTime: '15 min',
         difficulty: 'Medium'
       },
@@ -74,7 +65,7 @@
         id: 'rec4',
         name: 'Roasted Butternut Soup',
         description: 'Velvety smooth soup with a hint of ginger and coconut milk. Perfect for chilly evenings.',
-        image: 'https://picsum.photos/seed/soup/600/400',
+        image: 'https://images.pexels.com/photos/2323398/pexels-photo-2323398.jpeg?auto=compress&cs=tinysrgb&w=600',
         prepTime: '40 min',
         difficulty: 'Medium'
       }
@@ -90,7 +81,7 @@
       },
       {
         id: 'e2',
-        name: 'Wine & Dine Night',
+        name: 'Wine and Dine Night',
         date: 'September 5, 2026',
         time: '7:00 PM – 10:00 PM',
         location: 'The Cellar',
@@ -115,11 +106,6 @@
     ]
   };
 
-  // ============================================================
-  // HELPER FUNCTIONS
-  // ============================================================
-
-  // Generate a star rating HTML using template literal
   function renderStars(rating) {
     const full = Math.floor(rating);
     const half = rating % 1 >= 0.5 ? 1 : 0;
@@ -131,7 +117,6 @@
     return stars;
   }
 
-  // Build card HTML using template literals (exclusively)
   function buildCard(item, type) {
     let content = '';
 
@@ -179,10 +164,6 @@
     return content;
   }
 
-  // ============================================================
-  // LOCAL STORAGE FUNCTIONS
-  // ============================================================
-
   function getSavedItems() {
     try {
       return JSON.parse(localStorage.getItem('foodieSaves')) || [];
@@ -193,7 +174,9 @@
 
   function saveItem(item) {
     const saved = getSavedItems();
-    const exists = saved.some(s => s.id === item.id);
+    const exists = saved.some(function(s) {
+      return s.id === item.id;
+    });
     if (!exists) {
       saved.push(item);
       localStorage.setItem('foodieSaves', JSON.stringify(saved));
@@ -204,7 +187,9 @@
 
   function removeItem(id) {
     let saved = getSavedItems();
-    saved = saved.filter(item => item.id !== id);
+    saved = saved.filter(function(item) {
+      return item.id !== id;
+    });
     localStorage.setItem('foodieSaves', JSON.stringify(saved));
   }
 
@@ -226,22 +211,24 @@
     return false;
   }
 
-  // ============================================================
-  // RENDER FUNCTIONS
-  // ============================================================
-
   function renderHome() {
     const container = document.getElementById('pageContent');
     const restaurants = DATA.restaurants;
 
-    let cardsHtml = restaurants.map(r => buildCard(r, 'restaurant')).join('');
+    let cardsHtml = restaurants.map(function(r) {
+      return buildCard(r, 'restaurant');
+    }).join('');
+
+    const savedCount = getSavedItems().length;
+    const savedBadge = savedCount > 0 ? 
+      `<span style="background:#F1C40F; padding:0.1rem 0.8rem; border-radius:1rem; font-size:0.8rem;">❤️ ${savedCount} saved</span>` : '';
 
     const html = `
       <section>
         <h2>Discover Your City's Best Bites</h2>
         <p style="font-size:1.1rem; color:#5D6D7E;">
           Explore local restaurants, seasonal recipes, and community events.
-          ${getSavedItems().length > 0 ? `<span style="background:#F1C40F; padding:0.1rem 0.8rem; border-radius:1rem; font-size:0.8rem;">❤️ ${getSavedItems().length} saved</span>` : ''}
+          ${savedBadge}
         </p>
         <div class="grid">${cardsHtml}</div>
 
@@ -274,7 +261,9 @@
     const container = document.getElementById('pageContent');
     const recipes = DATA.recipes;
 
-    const cardsHtml = recipes.map(r => buildCard(r, 'recipe')).join('');
+    const cardsHtml = recipes.map(function(r) {
+      return buildCard(r, 'recipe');
+    }).join('');
 
     const html = `
       <section>
@@ -293,7 +282,9 @@
     const container = document.getElementById('pageContent');
     const events = DATA.events;
 
-    const cardsHtml = events.map(e => buildCard(e, 'event')).join('');
+    const cardsHtml = events.map(function(e) {
+      return buildCard(e, 'event');
+    }).join('');
 
     const html = `
       <section>
@@ -308,6 +299,60 @@
     setActiveNav('events');
   }
 
+  function renderContact() {
+    const container = document.getElementById('pageContent');
+
+    const html = `
+      <section>
+        <h2>📬 Get in Touch</h2>
+        <p style="color:#5D6D7E;">Have a food recommendation, recipe to share, or event to suggest? We would love to hear from you!</p>
+
+        <div class="highlight-box">
+          <h3>Send Us a Message</h3>
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactName">Your Name</label>
+                <input type="text" id="contactName" placeholder="Jane Doe" required />
+              </div>
+              <div class="form-group">
+                <label for="contactEmail">Email Address</label>
+                <input type="email" id="contactEmail" placeholder="jane@example.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contactSubject">Subject</label>
+              <select id="contactSubject">
+                <option value="recommendation">Recommend a Restaurant</option>
+                <option value="recipe">Share a Recipe</option>
+                <option value="event">Suggest an Event</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="contactMessage">Message</label>
+              <textarea id="contactMessage" rows="5" placeholder="Tell us about your food discovery..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+            <div id="contactFeedback" style="margin-top:0.8rem; font-weight:600;"></div>
+          </form>
+        </div>
+
+        <div class="contact-info">
+          <h3>📍 Visit or Reach Us</h3>
+          <p><span class="icon">📌</span> <strong>Address:</strong> 123 Foodie Lane, Culinary City, CC 12345</p>
+          <p><span class="icon">📧</span> <strong>Email:</strong> hello@localfoodieblog.com</p>
+          <p><span class="icon">🕐</span> <strong>Hours:</strong> Monday – Friday, 9:00 AM – 6:00 PM</p>
+          <p><span class="icon">📞</span> <strong>Phone:</strong> (555) 123-4567</p>
+        </div>
+      </section>
+    `;
+
+    container.innerHTML = html;
+    setupContactForm();
+    setActiveNav('contact');
+  }
+
   function renderSaved() {
     const container = document.getElementById('pageContent');
     const saved = getSavedItems();
@@ -315,14 +360,14 @@
     let html = `
       <section>
         <h2>❤️ Your Saved Favorites</h2>
-        <p>Items you've saved from across the blog.</p>
+        <p>Items you have saved from across the blog.</p>
     `;
 
     if (saved.length === 0) {
       html += `
         <div class="empty-state">
           <span class="emoji">🍽️</span>
-          <p>You haven't saved anything yet.</p>
+          <p>You have not saved anything yet.</p>
           <p class="text-muted">Explore the blog and click "Save" on your favorites!</p>
           <div style="margin-top:1rem;">
             <a href="index.html" class="btn btn-primary">Explore Now</a>
@@ -331,8 +376,7 @@
       `;
     } else {
       html += `<div>`;
-      // Use forEach array method
-      saved.forEach((item) => {
+      saved.forEach(function(item) {
         const typeLabels = {
           restaurant: '🍽️ Restaurant',
           recipe: '👨‍🍳 Recipe',
@@ -359,16 +403,14 @@
     html += `</section>`;
     container.innerHTML = html;
 
-    // Remove button listeners
-    document.querySelectorAll('.remove-save-btn').forEach(btn => {
+    document.querySelectorAll('.remove-save-btn').forEach(function(btn) {
       btn.addEventListener('click', function(e) {
         const id = this.dataset.id;
         removeItem(id);
-        renderSaved(); // Re-render using conditional branching
+        renderSaved();
       });
     });
 
-    // Clear all button
     const clearBtn = document.getElementById('clearAllSaved');
     if (clearBtn) {
       clearBtn.addEventListener('click', function() {
@@ -382,18 +424,17 @@
     setActiveNav('saved');
   }
 
-  // ============================================================
-  // SAVE BUTTON HANDLING
-  // ============================================================
-
   function attachSaveListeners() {
     const saved = getSavedItems();
-    const savedIds = saved.map(item => item.id);
+    const savedIds = saved.map(function(item) {
+      return item.id;
+    });
 
-    document.querySelectorAll('.save-btn').forEach(btn => {
+    document.querySelectorAll('.save-btn').forEach(function(btn) {
       const id = btn.dataset.id;
-      // Check if already saved using array method (some)
-      const isSaved = savedIds.some(sid => sid === id);
+      const isSaved = savedIds.some(function(sid) {
+        return sid === id;
+      });
 
       if (isSaved) {
         btn.textContent = '✅ Saved';
@@ -405,17 +446,16 @@
         const name = this.dataset.name;
         const type = this.dataset.type;
 
-        const item = { id, name, type };
+        const item = { id: id, name: name, type: type };
         const success = saveItem(item);
 
         if (success) {
           this.textContent = '✅ Saved!';
           this.disabled = true;
-          // Update saved count in header if on home page
           const countSpan = document.querySelector('p span[style*="background"]');
           if (countSpan) {
             const count = getSavedItems().length;
-            countSpan.textContent = `❤️ ${count} saved`;
+            countSpan.textContent = '❤️ ' + count + ' saved';
           }
         } else {
           this.textContent = '⭐ Already saved';
@@ -424,10 +464,6 @@
       });
     });
   }
-
-  // ============================================================
-  // NEWSLETTER FORM HANDLING
-  // ============================================================
 
   function setupNewsletterForm() {
     const form = document.getElementById('newsletterForm');
@@ -438,7 +474,6 @@
       const email = document.getElementById('newsEmail').value.trim();
       const feedback = document.getElementById('formFeedback');
 
-      // Conditional branching for validation
       if (!email) {
         feedback.innerHTML = '⚠️ Please enter your email address.';
         feedback.style.color = '#C0392B';
@@ -451,27 +486,74 @@
         return;
       }
 
-      // Use template literal for output
       const name = email.split('@')[0];
       const success = addNewsletterSub(email);
 
       if (success) {
-        feedback.innerHTML = `✅ Thanks, ${name}! You're subscribed to our newsletter.`;
+        feedback.innerHTML = '✅ Thanks, ' + name + '! You are subscribed to our newsletter.';
         feedback.style.color = '#27AE60';
         this.reset();
       } else {
-        feedback.innerHTML = `ℹ️ ${name}, you're already subscribed!`;
+        feedback.innerHTML = 'ℹ️ ' + name + ', you are already subscribed!';
         feedback.style.color = '#F39C12';
       }
     });
   }
 
-  // ============================================================
-  // NAVIGATION
-  // ============================================================
+  function setupContactForm() {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('contactName').value.trim();
+      const email = document.getElementById('contactEmail').value.trim();
+      const subject = document.getElementById('contactSubject').value;
+      const message = document.getElementById('contactMessage').value.trim();
+      const feedback = document.getElementById('contactFeedback');
+
+      if (!name || !email || !message) {
+        feedback.innerHTML = '⚠️ Please fill out all required fields.';
+        feedback.style.color = '#C0392B';
+        return;
+      }
+
+      if (!email.includes('@') || !email.includes('.')) {
+        feedback.innerHTML = '⚠️ Please enter a valid email address.';
+        feedback.style.color = '#C0392B';
+        return;
+      }
+
+      const subjectLabels = {
+        'recommendation': 'restaurant recommendation',
+        'recipe': 'recipe share',
+        'event': 'event suggestion',
+        'other': 'inquiry'
+      };
+
+      feedback.innerHTML = `
+        ✅ Thanks, ${name}! Your ${subjectLabels[subject] || 'message'} has been sent.
+        <br><small style="font-weight:normal; color:#5D6D7E;">We will respond within 24 hours.</small>
+      `;
+      feedback.style.color = '#27AE60';
+
+      let messages = JSON.parse(localStorage.getItem('contactMessages') || '[]');
+      messages.push({
+        name: name,
+        email: email,
+        subject: subject,
+        message: message,
+        date: new Date().toISOString()
+      });
+      localStorage.setItem('contactMessages', JSON.stringify(messages));
+
+      this.reset();
+    });
+  }
 
   function setActiveNav(page) {
-    document.querySelectorAll('.nav-links a').forEach(link => {
+    document.querySelectorAll('.nav-links a').forEach(function(link) {
       link.classList.remove('active');
       if (link.dataset.page === page) {
         link.classList.add('active');
@@ -483,22 +565,16 @@
     const hamburger = document.getElementById('hamburgerBtn');
     const navLinks = document.getElementById('navLinks');
 
-    // Hamburger toggle (event listener)
     hamburger.addEventListener('click', function() {
       navLinks.classList.toggle('open');
     });
 
-    // Close menu on link click
-    document.querySelectorAll('.nav-links a').forEach(link => {
+    document.querySelectorAll('.nav-links a').forEach(function(link) {
       link.addEventListener('click', function(e) {
         navLinks.classList.remove('open');
       });
     });
   }
-
-  // ============================================================
-  // PAGE ROUTING (conditional branching)
-  // ============================================================
 
   function routePage() {
     const path = window.location.pathname;
@@ -510,96 +586,22 @@
       renderRecipes();
     } else if (page === 'events') {
       renderEvents();
+    } else if (page === 'contact') {
+      renderContact();
     } else if (page === 'saved') {
       renderSaved();
-    } else if (page === 'contact') {
-      
-      setActiveNav('contact');
-      
-      const container = document.getElementById('pageContent');
-      if (container && container.children.length === 0) {
-        
-        container.innerHTML = `
-          <section>
-            <h2>Contact Us</h2>
-            <p>Please use the form below to get in touch.</p>
-          </section>
-        `;
-      }
     } else {
       renderHome();
     }
   }
 
-
-
-  function setupContactForm() {
-    const form = document.getElementById('contactForm');
-    if (form) {
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const name = document.getElementById('contactName').value.trim();
-        const email = document.getElementById('contactEmail').value.trim();
-        const subject = document.getElementById('contactSubject').value;
-        const message = document.getElementById('contactMessage').value.trim();
-        const feedback = document.getElementById('contactFeedback');
-
-        
-        if (!name || !email || !message) {
-          feedback.innerHTML = '⚠️ Please fill out all required fields.';
-          feedback.style.color = '#C0392B';
-          return;
-        }
-
-        if (!email.includes('@') || !email.includes('.')) {
-          feedback.innerHTML = '⚠️ Please enter a valid email address.';
-          feedback.style.color = '#C0392B';
-          return;
-        }
-
-        
-        const subjectLabels = {
-          'recommendation': 'restaurant recommendation',
-          'recipe': 'recipe share',
-          'event': 'event suggestion',
-          'other': 'inquiry'
-        };
-        
-        feedback.innerHTML = `
-          ✅ Thanks, ${name}! Your ${subjectLabels[subject] || 'message'} has been sent.
-          <br><small style="font-weight:normal; color:#5D6D7E;">We'll respond within 24 hours.</small>
-        `;
-        feedback.style.color = '#27AE60';
-        
-        
-        let messages = JSON.parse(localStorage.getItem('contactMessages')) || [];
-        messages.push({
-          name: name,
-          email: email,
-          subject: subject,
-          message: message,
-          date: new Date().toISOString()
-        });
-        localStorage.setItem('contactMessages', JSON.stringify(messages));
-        
-        this.reset();
-      });
-    }
-  }
-
-  
-
   document.addEventListener('DOMContentLoaded', function() {
     setupNavigation();
     routePage();
-    setupContactForm();
 
-   
     const saved = getSavedItems();
-    console.log(`📦 ${saved.length} items saved in localStorage`);
-    console.log(`📧 ${getNewsletterSubs().length} newsletter subscribers`);
-    console.log(`📬 ${JSON.parse(localStorage.getItem('contactMessages') || '[]').length} contact messages`);
+    console.log('📦 ' + saved.length + ' items saved in localStorage');
+    console.log('📧 ' + getNewsletterSubs().length + ' newsletter subscribers');
   });
 
 })();

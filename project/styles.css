@@ -1,9 +1,3 @@
-/* ============================================================
-   LOCAL FOODIE BLOG - Complete Styles
-   Original design by Robbinson
-   ============================================================ */
-
-/* ----- Reset & Base ----- */
 * {
   margin: 0;
   padding: 0;
@@ -31,7 +25,6 @@ body {
   flex-direction: column;
 }
 
-/* ----- Typography ----- */
 h1, h2, h3, h4, h5 {
   font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
   font-weight: 700;
@@ -42,16 +35,6 @@ h1, h2, h3, h4, h5 {
 h1 {
   font-size: 2.2rem;
   letter-spacing: -0.5px;
-}
-
-h1 small {
-  display: block;
-  font-size: 1rem;
-  font-weight: 400;
-  color: #5D6D7E;
-  font-family: 'Open Sans', Arial, sans-serif;
-  margin-top: 0.2rem;
-  letter-spacing: 0;
 }
 
 h2 {
@@ -93,7 +76,6 @@ a:hover {
   text-decoration: underline;
 }
 
-/* ----- Navigation ----- */
 nav {
   display: flex;
   flex-wrap: wrap;
@@ -181,7 +163,6 @@ nav {
   background: #F0ECE6;
 }
 
-/* ----- Cards & Grid ----- */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -240,322 +221,10 @@ nav {
   margin: 0.3rem 0 0.8rem;
 }
 
-/* ----- Buttons ----- */
 .btn {
   display: inline-block;
   padding: 0.6rem 1.5rem;
   border-radius: 2rem;
   font-weight: 600;
   font-size: 0.95rem;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s;
-  font-family: 'Open Sans', Arial, sans-serif;
-  text-align: center;
-}
-
-.btn-primary {
-  background: #C0392B;
-  color: #FFFFFF;
-}
-
-.btn-primary:hover {
-  background: #A93226;
-  transform: scale(1.02);
-}
-
-.btn-primary:disabled {
-  opacity: 0.5;
-  cursor: default;
-  transform: none;
-}
-
-.btn-accent {
-  background: #F1C40F;
-  color: #2C3E50;
-}
-
-.btn-accent:hover {
-  background: #D4AC0D;
-}
-
-.btn-outline {
-  background: transparent;
-  border: 2px solid #C0392B;
-  color: #C0392B;
-}
-
-.btn-outline:hover {
-  background: #C0392B;
-  color: #FFFFFF;
-}
-
-.btn-sm {
-  padding: 0.3rem 0.8rem;
-  font-size: 0.8rem;
-}
-
-.btn-block {
-  width: 100%;
-}
-
-/* ----- Forms ----- */
-.form-group {
-  margin: 0.8rem 0;
-}
-
-.form-group label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 0.2rem;
-  font-size: 0.95rem;
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select {
-  width: 100%;
-  padding: 0.7rem 1.2rem;
-  border: 2px solid #E8E4DE;
-  border-radius: 2rem;
-  font-family: 'Open Sans', Arial, sans-serif;
-  font-size: 1rem;
-  background: #FAF8F5;
-  transition: border-color 0.2s;
-}
-
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus {
-  outline: none;
-  border-color: #C0392B;
-}
-
-.form-group textarea {
-  border-radius: 1rem;
-  resize: vertical;
-  min-height: 80px;
-}
-
-.form-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.form-row .form-group {
-  flex: 1 1 200px;
-}
-
-/* ----- Contact Page Specific ----- */
-.contact-info {
-  background: #FAF8F5;
-  padding: 1.5rem;
-  border-radius: 1rem;
-  border: 1px solid #F0ECE6;
-  margin-top: 1.5rem;
-}
-
-.contact-info h3 {
-  margin-top: 0;
-}
-
-.contact-info p {
-  margin-bottom: 0.4rem;
-}
-
-.contact-info .icon {
-  font-size: 1.2rem;
-  margin-right: 0.5rem;
-}
-
-/* ----- Footer ----- */
-.footer-note {
-  margin-top: auto;
-  padding-top: 1.5rem;
-  border-top: 2px solid #F0ECE6;
-  text-align: center;
-  font-size: 0.85rem;
-  color: #5D6D7E;
-}
-
-.footer-note strong {
-  color: #C0392B;
-}
-
-/* ----- Utility ----- */
-.text-center { text-align: center; }
-.text-muted { color: #5D6D7E; }
-.mt-1 { margin-top: 0.8rem; }
-.mt-2 { margin-top: 1.5rem; }
-.mb-1 { margin-bottom: 0.8rem; }
-.mb-2 { margin-bottom: 1.5rem; }
-
-.highlight-box {
-  background: #FAF8F5;
-  padding: 1.5rem;
-  border-radius: 1rem;
-  margin-top: 1.5rem;
-  border: 1px solid #F0ECE6;
-}
-
-.highlight-box h3 {
-  margin-top: 0;
-}
-
-.empty-state {
-  padding: 3rem 1rem;
-  text-align: center;
-  color: #5D6D7E;
-}
-
-.empty-state .emoji {
-  font-size: 3rem;
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-/* ----- Saved Items ----- */
-.saved-item {
-  background: #FAF8F5;
-  padding: 0.8rem 1.2rem;
-  border-radius: 0.75rem;
-  margin-bottom: 0.6rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid #F0ECE6;
-  transition: background 0.2s;
-}
-
-.saved-item:hover {
-  background: #F5F0EA;
-}
-
-.saved-item .item-name {
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-.saved-item .item-type {
-  font-size: 0.7rem;
-  background: #E8E4DE;
-  padding: 0.1rem 0.6rem;
-  border-radius: 1rem;
-  color: #5D6D7E;
-  text-transform: uppercase;
-}
-
-/* ----- Responsive ----- */
-@media (max-width: 768px) {
-  .container {
-    padding: 1rem;
-    border-radius: 1rem;
-  }
-
-  h1 {
-    font-size: 1.6rem;
-  }
-  h2 {
-    font-size: 1.4rem;
-  }
-
-  nav {
-    padding: 0.5rem 0.8rem;
-    border-radius: 1.5rem;
-  }
-
-  .nav-brand {
-    font-size: 1.2rem;
-  }
-
-  .nav-links {
-    display: none;
-    width: 100%;
-    flex-direction: column;
-    gap: 0.3rem;
-    padding-top: 0.8rem;
-    border-top: 1px solid #F0ECE6;
-    margin-top: 0.5rem;
-  }
-
-  .nav-links.open {
-    display: flex;
-  }
-
-  .nav-links a {
-    width: 100%;
-    text-align: center;
-    padding: 0.6rem;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 1.2rem;
-  }
-
-  .form-row {
-    flex-direction: column;
-  }
-
-  .form-row .form-group {
-    flex: 1 1 auto;
-  }
-
-  .saved-item {
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  .saved-item .item-name {
-    flex: 1 1 100%;
-  }
-
-  .contact-info {
-    padding: 1rem;
-  }
-}
-
-@media (max-width: 400px) {
-  body {
-    padding: 0.5rem;
-  }
-  .container {
-    padding: 0.8rem;
-  }
-  .card {
-    padding: 1rem;
-  }
-  .card-image {
-    height: 150px;
-  }
-}
-
-/* ----- Print Styles ----- */
-@media print {
-  .hamburger,
-  .btn,
-  .save-btn,
-  .remove-save-btn {
-    display: none !important;
-  }
-  nav {
-    border: 1px solid #ccc;
-    background: #f9f9f9;
-  }
-  .card {
-    break-inside: avoid;
-    box-shadow: none;
-    border: 1px solid #ddd;
-  }
-  .card:hover {
-    transform: none;
-  }
-}
+  border: none}

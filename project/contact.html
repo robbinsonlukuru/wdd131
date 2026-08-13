@@ -15,7 +15,6 @@
 <body>
   <div class="container">
 
-    <!-- ====== NAVIGATION ====== -->
     <nav>
       <div class="nav-brand">
         <span>🍽️</span> Local Foodie
@@ -30,56 +29,8 @@
       </div>
     </nav>
 
-    <!-- ====== MAIN CONTENT ====== -->
-    <main id="pageContent">
-      <section>
-        <h2>📬 Get in Touch</h2>
-        <p style="font-size:1.1rem; color:#5D6D7E;">
-          Have a food recommendation, recipe to share, or event to suggest? We'd love to hear from you!
-        </p>
+    <main id="pageContent"></main>
 
-        <div class="highlight-box">
-          <h3>Send Us a Message</h3>
-          <form id="contactForm">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="contactName">Your Name</label>
-                <input type="text" id="contactName" placeholder="Jane Doe" required />
-              </div>
-              <div class="form-group">
-                <label for="contactEmail">Email Address</label>
-                <input type="email" id="contactEmail" placeholder="jane@example.com" required />
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="contactSubject">Subject</label>
-              <select id="contactSubject">
-                <option value="recommendation">Recommend a Restaurant</option>
-                <option value="recipe">Share a Recipe</option>
-                <option value="event">Suggest an Event</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="contactMessage">Message</label>
-              <textarea id="contactMessage" rows="5" placeholder="Tell us about your food discovery..." required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-            <div id="contactFeedback" style="margin-top:0.8rem; font-weight:600;"></div>
-          </form>
-        </div>
-
-        <div class="contact-info">
-          <h3>📍 Visit or Reach Us</h3>
-          <p><span class="icon">📌</span> <strong>Address:</strong> 123 Foodie Lane, Culinary City, CC 12345</p>
-          <p><span class="icon">📧</span> <strong>Email:</strong> hello@localfoodieblog.com</p>
-          <p><span class="icon">🕐</span> <strong>Hours:</strong> Monday – Friday, 9:00 AM – 6:00 PM</p>
-          <p><span class="icon">📞</span> <strong>Phone:</strong> (555) 123-4567</p>
-        </div>
-      </section>
-    </main>
-
-    <!-- ====== FOOTER ====== -->
     <footer class="footer-note">
       <p><strong>Local Foodie Blog</strong> — WDD 131 Dynamic Web Fundamentals · BYU-Idaho</p>
       <p style="font-size:0.8rem; margin-top:0.2rem;">
@@ -90,62 +41,5 @@
   </div>
 
   <script src="script.js"></script>
-  <script>
-    // Contact form handler (additional JavaScript)
-    document.addEventListener('DOMContentLoaded', function() {
-      const form = document.getElementById('contactForm');
-      if (form) {
-        form.addEventListener('submit', function(e) {
-          e.preventDefault();
-          
-          const name = document.getElementById('contactName').value.trim();
-          const email = document.getElementById('contactEmail').value.trim();
-          const subject = document.getElementById('contactSubject').value;
-          const message = document.getElementById('contactMessage').value.trim();
-          const feedback = document.getElementById('contactFeedback');
-
-          // Conditional branching for validation
-          if (!name || !email || !message) {
-            feedback.innerHTML = '⚠️ Please fill out all required fields.';
-            feedback.style.color = '#C0392B';
-            return;
-          }
-
-          if (!email.includes('@') || !email.includes('.')) {
-            feedback.innerHTML = '⚠️ Please enter a valid email address.';
-            feedback.style.color = '#C0392B';
-            return;
-          }
-
-          // Using template literal for output
-          const subjectLabels = {
-            'recommendation': 'restaurant recommendation',
-            'recipe': 'recipe share',
-            'event': 'event suggestion',
-            'other': 'inquiry'
-          };
-          
-          feedback.innerHTML = `
-            ✅ Thanks, ${name}! Your ${subjectLabels[subject] || 'message'} has been sent.
-            <br><small style="font-weight:normal; color:#5D6D7E;">We'll respond within 24 hours.</small>
-          `;
-          feedback.style.color = '#27AE60';
-          
-          // Store in localStorage (using array)
-          let messages = JSON.parse(localStorage.getItem('contactMessages')) || [];
-          messages.push({
-            name: name,
-            email: email,
-            subject: subject,
-            message: message,
-            date: new Date().toISOString()
-          });
-          localStorage.setItem('contactMessages', JSON.stringify(messages));
-          
-          this.reset();
-        });
-      }
-    });
-  </script>
 </body>
 </html>
