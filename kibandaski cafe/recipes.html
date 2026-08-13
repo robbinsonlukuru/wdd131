@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Authentic Kenyan recipes from Kibandaski – ugali, nyama choma, pilau, and more." />
+  <meta name="author" content="Robbinson Lukuru" />
+  <title>Kibandaski — Recipes</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+
+    <nav>
+      <div class="nav-brand">
+        <span>🍽️</span> Kibandaski
+      </div>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" data-page="home">Home</a>
+        <a href="recipes.html" data-page="recipes" class="active">Recipes</a>
+        <a href="events.html" data-page="events">Events</a>
+        <a href="contact.html" data-page="contact">Contact</a>
+        <a href="saved.html" data-page="saved" class="saved-link">❤️ Saved</a>
+      </div>
+    </nav>
+
+    <main>
+      <section>
+        <h2>Authentic Kenyan Recipes</h2>
+        <p style="color:#5D6D7E;">Discover traditional Kenyan dishes from our community. Save your favorites!</p>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Nyama Choma with Kachumbari</h3>
+            <div class="meta">
+              <span>⏱️ 45 min</span>
+              <span class="tag">Medium</span>
+            </div>
+            <img class="card-image" src="https://media.istockphoto.com/id/882187480/photo/sharing-platter-of-a-traditional-kenyan-dish-nyama-choma-and-accompaniments-of-kachumbari.jpg?s=612x612&w=0&k=20&c=LyX5AR8i4u-s1OY_S72tYZPEQUOrCSk5YduxW2I9fws=" alt="Nyama Choma" loading="lazy" />
+            <p>Grilled meat served with fresh tomato and onion salsa. A Kenyan barbecue classic.</p>
+            <button class="btn btn-primary save-btn" data-id="rec1" data-name="Nyama Choma with Kachumbari" data-type="recipe">❤️ Save</button>
+          </div>
+
+          <div class="card">
+            <h3>Ugali and Sukuma Wiki</h3>
+            <div class="meta">
+              <span>⏱️ 30 min</span>
+              <span class="tag">Easy</span>
+            </div>
+            <img class="card-image" src="https://media.istockphoto.com/id/1388531127/photo/ugali-and-traditionl-greens.jpg?s=612x612&w=0&k=20&c=zQUNx58N5oih17SjGjt8lXBU5KTZxCJez0wZU6R6NIg=" alt="Ugali and Sukuma Wiki" loading="lazy" />
+            <p>Staple Kenyan meal - cornmeal porridge with sautéed collard greens. Simple and nutritious.</p>
+            <button class="btn btn-primary save-btn" data-id="rec2" data-name="Ugali and Sukuma Wiki" data-type="recipe">❤️ Save</button>
+          </div>
+
+          <div class="card">
+            <h3>Kenyan Pilau Rice</h3>
+            <div class="meta">
+              <span>⏱️ 40 min</span>
+              <span class="tag">Medium</span>
+            </div>
+            <img class="card-image" src="https://media.istockphoto.com/id/1030110292/photo/pilaf-pilau-or-plov-with-beef-meat.jpg?s=612x612&w=0&k=20&c=8o9-G0GVmSNfJ72WzIO8gLCziarVI1OLU2xarkZtmj4=" alt="Kenyan Pilau" loading="lazy" />
+            <p>Fragrant spiced rice with beef or chicken. A Swahili coastal favorite for special occasions.</p>
+            <button class="btn btn-primary save-btn" data-id="rec3" data-name="Kenyan Pilau Rice" data-type="recipe">❤️ Save</button>
+          </div>
+
+          <div class="card">
+            <h3>Githeri (Maize and Beans)</h3>
+            <div class="meta">
+              <span>⏱️ 35 min</span>
+              <span class="tag">Easy</span>
+            </div>
+            <img class="card-image" src="https://media.istockphoto.com/id/2176916390/photo/kenyan-food-cuisines-foods-meals-dishes-dinner-supper-breakfast-snacks-yummy-delicious-lunch.jpg?s=612x612&w=0&k=20&c=JivjO5oCjP5CNdyjN7q6h7gZNi25HbKiTPGgFlRw7bs=" alt="Githeri" loading="lazy" />
+            <p>Traditional Kenyan dish of boiled maize and beans mixed with vegetables. A complete protein meal.</p>
+            <button class="btn btn-primary save-btn" data-id="rec4" data-name="Githeri" data-type="recipe">❤️ Save</button>
+          </div>
+
+          <div class="card">
+            <h3>Kenyan Chapati</h3>
+            <div class="meta">
+              <span>⏱️ 25 min</span>
+              <span class="tag">Medium</span>
+            </div>
+            <img class="card-image" src="https://media.istockphoto.com/id/2277425681/photo/vegetable-chapati-sliced-and-served-in-an-aluminum-pot.jpg?s=612x612&w=0&k=20&c=zbBCb1mo3RmvjjMJuWcpeAYsVYr3Ijs2EtlL3dRzcYk=" loading="lazy" />
+            <p>Soft, layered flatbread perfect for dipping in stews. A Swahili coastal specialty.</p>
+            <button class="btn btn-primary save-btn" data-id="rec5" data-name="Kenyan Chapati" data-type="recipe">❤️ Save</button>
+          </div>
+
+          <div class="card">
+            <h3>Maharagwe (Bean Stew)</h3>
+            <div class="meta">
+              <span>⏱️ 35 min</span>
+              <span class="tag">Easy</span>
+            </div>
+            <img class="card-image" src="https://media.istockphoto.com/id/2207794893/photo/chapati-mandazi-food-cuisines-meals-dishes-kenyan.jpg?s=612x612&w=0&k=20&c=6Fo3XiMCVBLIuPIU8QvlYxZYe1vsnDhIlNQOtvABOmA=" alt="Maharagwe" loading="lazy" />
+            <p>Coconut bean stew with tomatoes and spices. A vegetarian Kenyan comfort food.</p>
+            <button class="btn btn-primary save-btn" data-id="rec6" data-name="Maharagwe" data-type="recipe">❤️ Save</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer-note">
+      <p><strong>Kibandaski</strong> — WDD 131 Dynamic Web Fundamentals · BYU-Idaho</p>
+      <p style="font-size:0.8rem; margin-top:0.2rem;">
+        Built from scratch with ❤️ by Robbinson Lukuru using HTML, CSS, and JavaScript
+      </p>
+      <p style="font-size:0.8rem; margin-top:0.2rem;">
+        <a href="references.html">📚 References & Credits</a>
+      </p>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

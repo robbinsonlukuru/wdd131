@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kibandaski – discover local restaurants, authentic Kenyan recipes, and food events in Nairobi." />
+  <meta name="author" content="Robbinson Lukuru" />
+  <title>Kibandaski — Home</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+
+    <nav>
+      <div class="nav-brand">
+        <span>🍽️</span> Kibandaski
+      </div>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" data-page="home" class="active">Home</a>
+        <a href="recipes.html" data-page="recipes">Recipes</a>
+        <a href="events.html" data-page="events">Events</a>
+        <a href="contact.html" data-page="contact">Contact</a>
+        <a href="saved.html" data-page="saved" class="saved-link">❤️ Saved</a>
+      </div>
+    </nav>
+
+    <main>
+      <section>
+        <h2>Discover Nairobi's Best Bites</h2>
+        <p style="font-size:1.1rem; color:#5D6D7E;">
+          Explore local restaurants, authentic Kenyan recipes, and community events in Nairobi.
+        </p>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Kibandaski Cafe</h3>
+            <div class="meta">
+              <span class="tag">Kenyan</span>
+              <span>⭐⭐⭐⭐⭐</span>
+            </div>
+            <img class="card-image" src="https://media.istockphoto.com/id/1562522256/photo/traditional-east-african-meal-served-outdoors-in-nairobi.jpg?s=612x612&w=0&k=20&c=uqgbG59vmRIK1ZL-_ynHHKyVwUmyn9BRMsmMHwgl3kc=" alt="Kibandaski Cafe" loading="lazy" />
+            <p>Authentic local cuisine with nyama choma, ugali, and sukuma wiki. A true taste of Nairobi.</p>
+            <button class="btn btn-primary save-btn" data-id="r1" data-name="Kibandaski Cafe" data-type="restaurant">❤️ Save</button>
+          </div>
+
+          <div class="card">
+            <h3>Talisman Restaurant</h3>
+            <div class="meta">
+              <span class="tag">African Fusion</span>
+              <span>⭐⭐⭐⭐½</span>
+            </div>
+           <img class="card-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX2BYLWTRnlcmeKhODiF6moInFO8NTf5b9NlX391uuSQ&s=1000" alt="Talisman Restaurant" loading="lazy" /> 
+            <p>Elegant dining in Karen with a blend of African and international flavors. Famous for their lamb chops.</p>
+            <button class="btn btn-primary save-btn" data-id="r2" data-name="Talisman Restaurant" data-type="restaurant">❤️ Save</button>
+          </div>
+
+          <div class="card">
+            <h3>Carnivore Restaurant</h3>
+            <div class="meta">
+              <span class="tag">Barbecue</span>
+              <span>⭐⭐⭐⭐½</span>
+            </div>
+            <img class="card-image" src="data:image/jpeg;base64,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" alt="Carnivore Restaurant" loading="lazy" />
+            <p>Nairobi's iconic meat lovers paradise. Game meat and unlimited roasted meats carved at your table.</p>
+            <button class="btn btn-primary save-btn" data-id="r3" data-name="Carnivore Restaurant" data-type="restaurant">❤️ Save</button>
+          </div>
+
+          <div class="card">
+            <h3>Mama Oliech Restaurant</h3>
+            <div class="meta">
+              <span class="tag">Kenyan</span>
+              <span>⭐⭐⭐⭐½</span>
+            </div>
+            <img class="card-image" src="https://images.unsplash.com/photo-1565848920056-906a21da8c70?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGtlbnlhJTIwZm9vZHxlbnwwfHwwfHx8MA%3D%3D" alt="Mama Oliech Restaurant" loading="lazy" />
+            <p>Famous for fried tilapia with ugali and kachumbari. A local favorite in Eastleigh.</p>
+            <button class="btn btn-primary save-btn" data-id="r4" data-name="Mama Oliech Restaurant" data-type="restaurant">❤️ Save</button>
+          </div>
+
+          <div class="card">
+            <h3>Java House</h3>
+            <div class="meta">
+              <span class="tag">Cafe</span>
+              <span>⭐⭐⭐⭐</span>
+            </div>
+            <img class="card-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2HplNxnvUGFz7N1GQgxVsGek2XauiJoSURPzzG2AOgw&s=10" alt="Java House" loading="lazy" />
+            <p>Nairobi's favorite coffee house serving breakfast, lunch, and amazing Kenyan coffee.</p>
+            <button class="btn btn-primary save-btn" data-id="r5" data-name="Java House" data-type="restaurant">❤️ Save</button>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <h3>📬 Stay in the Loop</h3>
+          <p>Get weekly foodie updates straight to your inbox. No spam, just delicious content.</p>
+          <form id="newsletterForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="newsEmail">Email Address</label>
+                <input type="email" id="newsEmail" placeholder="you@example.com" required />
+              </div>
+              <div class="form-group" style="display:flex; align-items:flex-end;">
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+              </div>
+            </div>
+            <div id="formFeedback" style="margin-top:0.5rem; font-weight:600;"></div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer-note">
+      <p><strong>Kibandaski</strong> — WDD 131 Dynamic Web Fundamentals · BYU-Idaho</p>
+      <p style="font-size:0.8rem; margin-top:0.2rem;">
+        Built from scratch with ❤️ by Robbinson Lukuru using HTML, CSS, and JavaScript
+      </p>
+      <p style="font-size:0.8rem; margin-top:0.2rem;">
+        <a href="references.html">📚 References & Credits</a>
+      </p>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

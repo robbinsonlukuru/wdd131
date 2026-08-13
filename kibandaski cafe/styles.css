@@ -32,11 +32,6 @@ h1, h2, h3, h4, h5 {
   line-height: 1.2;
 }
 
-h1 {
-  font-size: 2.2rem;
-  letter-spacing: -0.5px;
-}
-
 h2 {
   font-size: 1.8rem;
   border-bottom: 4px solid #F1C40F;
@@ -250,15 +245,6 @@ nav {
   transform: none;
 }
 
-.btn-accent {
-  background: #F1C40F;
-  color: #2C3E50;
-}
-
-.btn-accent:hover {
-  background: #D4AC0D;
-}
-
 .btn-outline {
   background: transparent;
   border: 2px solid #C0392B;
@@ -356,30 +342,6 @@ nav {
   color: #C0392B;
 }
 
-.text-center {
-  text-align: center;
-}
-
-.text-muted {
-  color: #5D6D7E;
-}
-
-.mt-1 {
-  margin-top: 0.8rem;
-}
-
-.mt-2 {
-  margin-top: 1.5rem;
-}
-
-.mb-1 {
-  margin-bottom: 0.8rem;
-}
-
-.mb-2 {
-  margin-bottom: 1.5rem;
-}
-
 .highlight-box {
   background: #FAF8F5;
   padding: 1.5rem;
@@ -443,9 +405,6 @@ nav {
     border-radius: 1rem;
   }
 
-  h1 {
-    font-size: 1.6rem;
-  }
   h2 {
     font-size: 1.4rem;
   }

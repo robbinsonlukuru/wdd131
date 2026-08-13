@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Kibandaski – get in touch with Robbinson Lukuru for food recommendations or questions." />
+  <meta name="author" content="Robbinson Lukuru" />
+  <title>Kibandaski — Contact</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+
+    <nav>
+      <div class="nav-brand">
+        <span>🍽️</span> Kibandaski
+      </div>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" data-page="home">Home</a>
+        <a href="recipes.html" data-page="recipes">Recipes</a>
+        <a href="events.html" data-page="events">Events</a>
+        <a href="contact.html" data-page="contact" class="active">Contact</a>
+        <a href="saved.html" data-page="saved" class="saved-link">❤️ Saved</a>
+      </div>
+    </nav>
+
+    <main>
+      <section>
+        <h2>📬 Get in Touch</h2>
+        <p style="color:#5D6D7E;">Have a food recommendation, recipe to share, or event to suggest? We would love to hear from you!</p>
+
+        <div class="highlight-box">
+          <h3>Send Us a Message</h3>
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactName">Your Name</label>
+                <input type="text" id="contactName" placeholder="Jane Doe" required />
+              </div>
+              <div class="form-group">
+                <label for="contactEmail">Email Address</label>
+                <input type="email" id="contactEmail" placeholder="you@example.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contactSubject">Subject</label>
+              <select id="contactSubject">
+                <option value="recommendation">Recommend a Restaurant</option>
+                <option value="recipe">Share a Recipe</option>
+                <option value="event">Suggest an Event</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="contactMessage">Message</label>
+              <textarea id="contactMessage" rows="5" placeholder="Tell us about your food discovery..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+            <div id="contactFeedback" style="margin-top:0.8rem; font-weight:600;"></div>
+          </form>
+        </div>
+
+        <div class="contact-info">
+          <h3>📍 Visit or Reach Us</h3>
+          <p><span class="icon">📌</span> <strong>Address:</strong> Kibandaski Lane, Nairobi South B, Kenya</p>
+          <p><span class="icon">📧</span> <strong>Email:</strong> robbinsonlukuru@gmail.com</p>
+          <p><span class="icon">🕐</span> <strong>Hours:</strong> Monday – Saturday, 8:00 AM – 8:00 PM</p>
+          <p><span class="icon">📞</span> <strong>Phone:</strong> +254 700 123 456</p>
+          <p><span class="icon">👤</span> <strong>Founder:</strong> Robbinson Lukuru</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer-note">
+      <p><strong>Kibandaski</strong> — WDD 131 Dynamic Web Fundamentals · BYU-Idaho</p>
+      <p style="font-size:0.8rem; margin-top:0.2rem;">
+        Built from scratch with ❤️ by Robbinson Lukuru using HTML, CSS, and JavaScript
+      </p>
+      <p style="font-size:0.8rem; margin-top:0.2rem;">
+        <a href="references.html">📚 References & Credits</a>
+      </p>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
